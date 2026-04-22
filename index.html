@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>i+Thinnk® — Ingeniería Industrial con Inteligencia</title>
+<meta name="description" content="Transformamos complejidad industrial en resultados con ingeniería avanzada, estrategia y tecnología AI aplicada.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --white:#FFFFFF; --off:#FAFAF8; --light:#F5F0E8; --mid:#C9B99A;
+    --muted:#9A8B78; --gold:#B8975A; --gold-light:#F5EDD9; --dark:#1A1410; --black:#0A0A0A;
+    --border:rgba(10,10,10,0.07); --border-md:rgba(10,10,10,0.12); --border-dk:rgba(10,10,10,0.22);
+    
+    --mono:'DM Mono',monospace; --sans:'DM Sans',sans-serif; --display:'Syne',sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { background:var(--white); color:var(--black); font-family:var(--sans); font-weight:300; line-height:1.6; overflow-x:hidden; }
+  ::-webkit-scrollbar{width:2px} ::-webkit-scrollbar-track{background:var(--off)} ::-webkit-scrollbar-thumb{background:var(--mid)}
+
+  /* NAV */
+  nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:20px 52px; background:rgba(255,255,255,0.93); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-bottom:1px solid var(--border); transition:border-color 0.3s; }
+  .logo { font-family:var(--sans); font-weight:700; font-size:22px; letter-spacing:3px; color:var(--black); text-decoration:none; font-stretch:expanded; -webkit-text-stroke:0.3px var(--black); word-spacing:-2px; }
+  .logo span { color:var(--black); font-weight:700; }
+  .nav-links { display:flex; gap:36px; list-style:none; }
+  .nav-links a { font-size:11px; font-weight:400; letter-spacing:2px; text-transform:uppercase; color:var(--muted); text-decoration:none; transition:color 0.2s; }
+  .nav-links a:hover { color:var(--black); }
+  .nav-cta { font-family:var(--sans); font-size:12px; font-weight:500; padding:9px 22px; background:var(--black); color:var(--gold); border:none; border-radius:1px; cursor:pointer; text-decoration:none; transition:all 0.2s; }
+  .nav-cta:hover { background:var(--black); }
+
+  /* HERO */
+  .hero { min-height:100vh; display:grid; grid-template-columns:1fr 1fr; border-bottom:1px solid var(--border-md); padding-top:64px; }
+  .hero-left { padding:80px 52px; display:flex; flex-direction:column; justify-content:center; border-right:1px solid var(--border-md); }
+  .hero-badge { display:inline-flex; align-items:center; gap:8px; font-family:var(--mono); font-size:10px; color:var(--gold); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:40px; }
+  .hero-badge::before { content:''; display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--gold); animation:pulse 2.5s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.2} }
+  .hero h1 { font-family:var(--display); font-weight:800; font-size:clamp(48px,6vw,82px); line-height:0.93; letter-spacing:-3px; color:var(--black); margin-bottom:32px; }
+  .hero h1 .muted { color:var(--mid); }
+  .hero-sub { font-size:15px; font-weight:300; color:var(--muted); max-width:400px; line-height:1.75; margin-bottom:48px; border-left:2px solid var(--gold-light); padding-left:18px; }
+  .hero-actions { display:flex; gap:12px; align-items:center; }
+  .btn-primary { font-family:var(--sans); font-size:12px; font-weight:500; letter-spacing:0.5px; padding:13px 28px; background:var(--black); color:var(--gold); border:none; border-radius:1px; cursor:pointer; text-decoration:none; display:inline-block; transition:all 0.2s; }
+  .btn-primary:hover { background:var(--black); }
+  .btn-ghost { font-family:var(--sans); font-size:12px; font-weight:400; letter-spacing:0.5px; padding:13px 28px; background:transparent; color:var(--muted); border:1px solid var(--border-dk); border-radius:1px; cursor:pointer; text-decoration:none; display:inline-block; transition:all 0.2s; }
+  .btn-ghost:hover { color:var(--black); border-color:var(--black); }
+  .hero-right { display:flex; flex-direction:column; justify-content:flex-end; background:var(--off); position:relative; overflow:hidden; }
+  .hero-right img { width:100%; height:100%; object-fit:cover; filter:grayscale(100%) contrast(1.05) brightness(0.88); display:block; position:absolute; inset:0; }
+  .hero-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(255,255,255,0.9) 0%,rgba(255,255,255,0.05) 55%); }
+  .hero-data { position:relative; z-index:2; display:grid; grid-template-columns:1fr 1fr 1fr; gap:1px; background:var(--border-md); border-top:1px solid var(--border-md); }
+  .hero-metric { background:rgba(255,255,255,0.92); padding:20px 18px; }
+  .hero-metric-num { font-family:var(--display); font-size:28px; font-weight:800; color:var(--black); letter-spacing:-1.5px; line-height:1; margin-bottom:4px; }
+  .hero-metric-label { font-family:var(--mono); font-size:9px; color:var(--muted); text-transform:uppercase; letter-spacing:1.5px; }
+
+  /* TICKER */
+  .ticker { background:var(--black); padding:11px 0; overflow:hidden; }
+  .ticker-track { display:flex; width:max-content; animation:ticker 35s linear infinite; }
+  .ticker-item { display:flex; align-items:center; gap:28px; padding:0 28px; white-space:nowrap; }
+  .ticker-text { font-family:var(--mono); font-size:10px; color:#94A3B8; letter-spacing:2px; text-transform:uppercase; }
+  .ticker-sep { color:#B8975A; font-size:10px; opacity:0.5; }
+  @keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+  /* SECTION HELPERS */
+  .section-label { font-family:var(--mono); font-size:10px; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold); margin-bottom:16px; }
+  .section-title { font-family:var(--display); font-weight:800; font-size:clamp(28px,3.5vw,44px); letter-spacing:-1.5px; line-height:1.05; color:var(--black); }
+  .section-sub { font-size:14px; font-weight:300; color:var(--muted); line-height:1.75; max-width:420px; }
+
+  /* SERVICES */
+  .services { padding:100px 52px; background:var(--white); border-bottom:1px solid var(--border-md); }
+  .services-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:60px; gap:40px; }
+  .services-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--border-md); border:1px solid var(--border-md); }
+  .service-card { background:var(--white); padding:44px 40px; transition:background 0.25s; position:relative; overflow:hidden; }
+  .service-card::after { content:''; position:absolute; bottom:0; left:0; right:0; height:1px; background:var(--gold); transform:scaleX(0); transform-origin:left; transition:transform 0.35s ease; }
+  .service-card:hover { background:var(--off); }
+  .service-card:hover::after { transform:scaleX(1); }
+  .service-num { font-family:var(--mono); font-size:10px; color:var(--gold); letter-spacing:2px; display:block; margin-bottom:24px; }
+  .service-title { font-family:var(--display); font-size:17px; font-weight:700; color:var(--black); margin-bottom:12px; line-height:1.25; letter-spacing:-0.3px; }
+  .service-desc { font-size:13px; font-weight:300; color:var(--muted); line-height:1.8; }
+  .service-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:22px; }
+  .tag { font-family:var(--mono); font-size:10px; color:#8A6E3E; background:var(--gold-light); padding:3px 10px; border-radius:1px; }
+
+  /* AI APPLE STYLE */
+  .ai-apple { background:var(--white); border-bottom:1px solid var(--border-md); }
+  .ai-apple-intro { padding:100px 52px 72px; border-bottom:1px solid var(--border-md); max-width:800px; }
+  .ai-apple-title { font-family:var(--display); font-weight:800; font-size:clamp(36px,5vw,62px); letter-spacing:-2.5px; line-height:1.05; color:var(--black); margin-top:16px; margin-bottom:20px; }
+  .ai-apple-sub { font-size:16px; font-weight:300; color:var(--muted); line-height:1.75; max-width:520px; }
+  .ai-apple-blocks { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border-md); }
+  .ai-block { background:var(--off); padding:56px 44px; }
+  .ai-block-dark { background:var(--black); }
+  .ai-block-label { font-family:var(--mono); font-size:10px; color:var(--gold); letter-spacing:2px; margin-bottom:32px; }
+  .ai-block-headline { font-family:var(--display); font-weight:800; font-size:clamp(22px,2.5vw,30px); letter-spacing:-1px; line-height:1.1; color:var(--black); margin-bottom:20px; }
+  .ai-block-body { font-size:13px; font-weight:300; color:var(--muted); line-height:1.8; }
+  @media(max-width:768px){ .ai-apple-intro{padding:64px 20px 48px} .ai-apple-blocks{grid-template-columns:1fr} }
+
+  /* ABOUT */
+  .about { display:grid; grid-template-columns:1fr 1fr; border-bottom:1px solid var(--border-md); }
+  .about-left { padding:100px 52px; border-right:1px solid var(--border-md); display:flex; flex-direction:column; justify-content:center; }
+  .about-quote { border-left:3px solid var(--gold); padding-left:20px; font-family:var(--display); font-size:clamp(22px,2.8vw,32px); font-weight:800; line-height:1.15; letter-spacing:-1px; color:var(--black); margin-bottom:28px; margin-top:24px; }
+  .about-body { font-size:14px; font-weight:300; color:var(--muted); line-height:1.85; margin-bottom:40px; }
+  .stat-row { display:flex; gap:0; border:1px solid var(--border-md); }
+  .stat { flex:1; padding:20px; border-right:1px solid var(--border-md); }
+  .stat:last-child { border-right:none; }
+  .stat-num { font-family:var(--display); font-size:28px; font-weight:800; color:var(--gold); letter-spacing:-1.5px; line-height:1; margin-bottom:4px; }
+  .stat-label { font-family:var(--mono); font-size:9px; color:var(--muted); text-transform:uppercase; letter-spacing:1.5px; }
+  .about-right { position:relative; overflow:hidden; min-height:520px; background:var(--light); }
+  .about-right img { width:100%; height:100%; object-fit:cover; filter:grayscale(60%) contrast(1.05) brightness(0.8) sepia(20%); display:block; position:absolute; inset:0; }
+  .about-caption { position:absolute; bottom:20px; left:20px; font-family:var(--mono); font-size:9px; color:var(--gold); background:var(--black); padding:5px 12px; letter-spacing:1.5px; text-transform:uppercase; }
+
+  /* SALES LAB */
+  .saleslab { padding:100px 52px; background:var(--off); border-bottom:1px solid var(--border-md); }
+  .saleslab-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:60px; gap:40px; }
+  .saleslab-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border-md); border:1px solid var(--border-md); }
+  .sl-card { background:var(--white); padding:32px 28px; transition:background 0.2s; }
+  .sl-card:hover { background:var(--gold-light); }
+  .sl-num { font-family:var(--mono); font-size:10px; color:var(--gold); letter-spacing:2px; display:block; margin-bottom:16px; }
+  .sl-title { font-family:var(--display); font-size:14px; font-weight:700; color:var(--black); margin-bottom:8px; line-height:1.3; letter-spacing:-0.2px; }
+  .sl-desc { font-size:12px; font-weight:300; color:var(--muted); line-height:1.75; }
+
+  /* CTA */
+  .cta { background:var(--black); padding:100px 52px; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+  .cta h2 { font-family:var(--display); font-size:clamp(36px,5vw,60px); font-weight:800; letter-spacing:-2.5px; color:var(--white); line-height:0.95; }
+  .cta h2 span { color:var(--gold); }
+  .cta-right { display:flex; flex-direction:column; gap:14px; border-left:1px solid rgba(184,151,90,0.25); padding-left:60px; }
+  .cta-right p { font-size:14px; font-weight:300; color:#6B5E4A; line-height:1.7; margin-bottom:8px; }
+  .btn-white { font-family:var(--sans); font-size:12px; font-weight:500; padding:13px 28px; background:var(--gold); color:var(--black); border:none; border-radius:1px; cursor:pointer; text-decoration:none; display:inline-block; transition:opacity 0.2s; text-align:center; }
+  .btn-white:hover { opacity:0.88; }
+  .btn-outline-white { font-family:var(--sans); font-size:12px; font-weight:400; padding:13px 28px; background:transparent; color:#6B5E4A; border:1px solid rgba(184,151,90,0.25); border-radius:1px; cursor:pointer; text-decoration:none; display:inline-block; transition:all 0.2s; text-align:center; }
+  .btn-outline-white:hover { color:var(--gold); border-color:var(--gold); }
+
+  /* FOOTER */
+  footer { padding:28px 52px; background:var(--dark); border-top:1px solid rgba(184,151,90,0.12); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
+  .footer-logo { font-family:var(--sans); font-weight:700; font-size:20px; letter-spacing:3px; color:var(--white); text-decoration:none; -webkit-text-stroke:0.3px var(--white); }
+  .footer-logo span { color:var(--white); font-weight:700; }
+  .footer-copy { font-family:var(--mono); font-size:10px; color:#4A3F30; letter-spacing:0.5px; }
+  .footer-links { display:flex; gap:28px; }
+  .footer-links a { font-family:var(--mono); font-size:10px; color:#6B5E4A; text-decoration:none; letter-spacing:1.5px; text-transform:uppercase; transition:color 0.2s; }
+  .footer-links a:hover { color:var(--gold); }
+
+  /* MOBILE */
+  @media(max-width:768px){
+    nav{padding:16px 20px} .nav-links{display:none}
+    .hero{grid-template-columns:1fr;min-height:auto}
+    .hero-left{padding:100px 20px 52px;border-right:none;border-bottom:1px solid var(--border-md)}
+    .hero-right{min-height:280px}
+    .services,.saleslab{padding:64px 20px}
+    .services-header,.saleslab-header{flex-direction:column;align-items:flex-start}
+    .services-grid{grid-template-columns:1fr}
+    .ai-section{grid-template-columns:1fr}
+    .ai-left{padding:64px 20px;border-right:none;border-bottom:1px solid var(--border-md)}
+    .ai-right{padding:32px 20px}
+    .about{grid-template-columns:1fr}
+    .about-left{padding:64px 20px;border-right:none}
+    .about-right{min-height:280px}
+    .saleslab-grid{grid-template-columns:1fr}
+    .cta{grid-template-columns:1fr;gap:40px;padding:64px 20px}
+    .cta-right{padding-left:0;border-left:none;border-top:1px solid rgba(255,255,255,0.08);padding-top:40px}
+    footer{flex-direction:column;padding:24px 20px;gap:12px}
+  }
+
+  /* REVEAL */
+  .reveal { opacity:0; transform:translateY(20px); transition:opacity 0.65s ease,transform 0.65s ease; }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="logo">i<span>+</span>Thinnk®</a>
+  <ul class="nav-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#ai">IA Industrial</a></li>
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#saleslab">Sales Lab</a></li>
+  </ul>
+  <a href="#contacto" class="nav-cta">Agenda una consulta</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-left reveal">
+    <div class="hero-badge">Sistema activo</div>
+    <h1>Más rendimiento.<br><span class="muted">Menos incertidumbre.</span></h1>
+    <p class="hero-sub">Transformamos complejidad en resultados con ingeniería avanzada, estrategia y tecnología AI aplicada a procesos industriales reales.</p>
+    <div class="hero-actions">
+      <a href="#contacto" class="btn-primary">Solicitar consulta →</a>
+      <a href="#servicios" class="btn-ghost">Ver servicios</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="PHOTO20260410145437.jpg" alt="Planta industrial" onerror="this.src='https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=1200&q=80'">
+    <div class="hero-overlay"></div>
+    <div class="hero-data">
+      <div class="hero-metric"><div class="hero-metric-num">4</div><div class="hero-metric-label">Áreas de servicio</div></div>
+      <div class="hero-metric"><div class="hero-metric-num">AI</div><div class="hero-metric-label">Tech aplicada</div></div>
+      <div class="hero-metric"><div class="hero-metric-num">360°</div><div class="hero-metric-label">Visión industrial</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <div class="ticker-item">
+      <span class="ticker-text">Gestión de Proyectos</span><span class="ticker-sep">—</span>
+      <span class="ticker-text">Ingeniería de Procesos</span><span class="ticker-sep">—</span>
+      <span class="ticker-text">Consultoría en Equipamiento</span><span class="ticker-sep">—</span>
+      <span class="ticker-text">Estrategia Industrial</span><span class="ticker-sep">—</span>
+      <span class="ticker-text">Sales Lab</span><span class="ticker-sep">—</span>
+      <span class="ticker-text">AI aplicada a procesos</span><span class="ticker-sep">—</span>
+      <span class="ticker-text">Go-To-Market técnico</span><span class="ticker-sep">—</span>
+    </div>
+    <div class="ticker-item" aria-hidden="true">
+      <span class="ticker-text">Gestión de Proyectos</span><span class="ticker-sep">—</span>
+      <span class="ticker-text">Ingeniería de Procesos</span><span class="ticker-sep">—</span>
+      <span class="ticker-text">Consultoría en Equipamiento</span><span class="ticker-sep">—</span>
+      <span class="ticker-text">Estrategia Industrial</span><span class="ticker-sep">—</span>
+      <span class="ticker-text">Sales Lab</span><span class="ticker-sep">—</span>
+      <span class="ticker-text">AI aplicada a procesos</span><span class="ticker-sep">—</span>
+      <span class="ticker-text">Go-To-Market técnico</span><span class="ticker-sep">—</span>
+    </div>
+  </div>
+</div>
+
+<section class="services reveal" id="servicios">
+  <div class="services-header">
+    <div><div class="section-label">// Servicios</div><h2 class="section-title">Lo que hacemos</h2></div>
+    <p class="section-sub">Desde la ingeniería en terreno hasta la estrategia de crecimiento. Sin humo, solo resultados medibles.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <span class="service-num">01 — PROYECTOS</span>
+      <div class="service-title">Gestión y Desarrollo de Proyectos Industriales</div>
+      <p class="service-desc">Convertimos ideas complejas en proyectos reales. Desde el análisis inicial hasta la puesta en marcha, asegurando inversiones sólidas, riesgos controlados y resultados que funcionan en el mundo físico.</p>
+      <div class="service-tags"><span class="tag">Factibilidad</span><span class="tag">PMO</span><span class="tag">Commissioning</span></div>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-num">02 — PROCESOS</span>
+      <div class="service-title">Ingeniería y Optimización de Procesos</div>
+      <p class="service-desc">Diseñamos y mejoramos líneas productivas para que rindan más, gasten menos y operen con estabilidad. Metodologías modernas, datos reales y criterio técnico de terreno.</p>
+      <div class="service-tags"><span class="tag">Lean</span><span class="tag">Six Sigma</span><span class="tag">Data-driven</span></div>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-num">03 — EQUIPAMIENTO</span>
+      <div class="service-title">Consultoría en Equipamiento y Tecnología</div>
+      <p class="service-desc">Pelletizado, extrusión, molienda, automatización, eficiencia energética, ensacado y logística. Seleccionamos lo que calza con tu negocio, no con el catálogo del proveedor.</p>
+      <div class="service-tags"><span class="tag">Automatización</span><span class="tag">Eficiencia</span><span class="tag">IoT</span></div>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-num">04 — ESTRATEGIA</span>
+      <div class="service-title">Estrategias Industriales e Innovación</div>
+      <p class="service-desc">Definimos rutas claras, evaluamos escenarios e identificamos oportunidades para avanzar con foco y velocidad hacia donde necesitas llegar.</p>
+      <div class="service-tags"><span class="tag">Innovación</span><span class="tag">Escalabilidad</span><span class="tag">Estrategia</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="ai-apple" id="ai">
+  <div class="ai-apple-intro reveal">
+    <div class="section-label">// Tecnología e Inteligencia</div>
+    <h2 class="ai-apple-title">Inteligencia aplicada<br>a tu operación.</h2>
+    <p class="ai-apple-sub">Usamos datos, modelos predictivos y automatización para que tus procesos tomen mejores decisiones — más rápido y con menos riesgo.</p>
+  </div>
+  <div class="ai-apple-blocks">
+    <div class="ai-block reveal">
+      <div class="ai-block-label">01</div>
+      <div class="ai-block-headline">Anticipa fallas<br>antes de que ocurran.</div>
+      <p class="ai-block-body">Modelos de mantenimiento predictivo que analizan variables de tu planta en tiempo real y alertan con días de anticipación.</p>
+    </div>
+    <div class="ai-block reveal ai-block-dark">
+      <div class="ai-block-label" style="color:#555552">02</div>
+      <div class="ai-block-headline" style="color:var(--white)">Optimización<br>continua y automática.</div>
+      <p class="ai-block-body" style="color:#666663">Algoritmos que ajustan parámetros de proceso en tiempo real para maximizar rendimiento y reducir consumo energético.</p>
+    </div>
+    <div class="ai-block reveal">
+      <div class="ai-block-label">03</div>
+      <div class="ai-block-headline">Datos que se<br>convierten en decisiones.</div>
+      <p class="ai-block-body">Dashboards ejecutivos, KPIs industriales y reportes automáticos. La información correcta, para quien la necesita.</p>
+    </div>
+  </div>
+</section>
+
+<section class="about reveal" id="nosotros">
+  <div class="about-left">
+    <div class="section-label">// Nosotros</div>
+    <div class="about-quote">"Ingeniería que trasciende lo obvio. Innovación que se convierte en acción."</div>
+    <p class="about-body">En i+Thinnk® no creemos en el asesoramiento genérico. Trabajamos con foco, criterio técnico y visión estratégica para transformar incertidumbre en dirección y dirección en resultados con valor real.<br><br>Combinamos experiencia en ingeniería industrial de terreno con herramientas de inteligencia artificial, análisis de datos y estrategia de negocios. Operamos desde Los Ángeles, Región del Biobío, Chile.</p>
+    <div class="stat-row">
+      <div class="stat"><div class="stat-num">4</div><div class="stat-label">Servicios</div></div>
+      <div class="stat"><div class="stat-num">AI</div><div class="stat-label">Tech aplicada</div></div>
+      <div class="stat"><div class="stat-num">360°</div><div class="stat-label">Industrial</div></div>
+    </div>
+  </div>
+  <div class="about-right">
+    <img src="PHOTO20260410145447.jpg" alt="Terreno industrial" onerror="this.src='https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=900&q=80'">
+    <div class="about-caption">// Proyecto activo — terreno</div>
+  </div>
+</section>
+
+<section class="saleslab reveal" id="saleslab">
+  <div class="saleslab-header">
+    <div><div class="section-label">// Programa especial</div><h2 class="section-title">Sales Lab</h2></div>
+    <p class="section-sub">Para founders y equipos técnicos que necesitan aprender a vender sin parecer vendedores.</p>
+  </div>
+  <div class="saleslab-grid">
+    <div class="sl-card"><span class="sl-num">01</span><div class="sl-title">Mentorías en Ventas Técnicas</div><p class="sl-desc">Narrativa, estrategia y claridad del valor para negociaciones con grandes clientes. Incluyendo reuniones en inglés.</p></div>
+    <div class="sl-card"><span class="sl-num">02</span><div class="sl-title">Propuestas de Alto Impacto</div><p class="sl-desc">Estructura y fuerza: problema → solución → valor → retorno. Sin PowerPoints eternos. Persuasión y precisión.</p></div>
+    <div class="sl-card"><span class="sl-num">03</span><div class="sl-title">Go-To-Market Técnico</div><p class="sl-desc">Cómo entrar al mercado y validar interés real sin desperdiciar meses. Ideal para startups y scale-ups.</p></div>
+    <div class="sl-card"><span class="sl-num">04</span><div class="sl-title">Storytelling Comercial</div><p class="sl-desc">Transformamos complejidad tecnológica en mensajes que cualquier cliente entiende y valora.</p></div>
+    <div class="sl-card"><span class="sl-num">05</span><div class="sl-title">Entrenamientos para Equipos</div><p class="sl-desc">Workshops prácticos: presentar valor, responder objeciones, negociar sin regalar margen.</p></div>
+    <div class="sl-card"><span class="sl-num">06</span><div class="sl-title">Acompañamiento en Reuniones</div><p class="sl-desc">Te preparamos o acompañamos digitalmente en reuniones donde no hay margen para improvisar.</p></div>
+  </div>
+</section>
+
+<section class="cta reveal" id="contacto">
+  <h2>¿Listo para<br><span>avanzar?</span></h2>
+  <div class="cta-right">
+    <p>Cuéntanos tu desafío. Respondemos rápido y directo, sin intermediarios.</p>
+    <a href="tel:+56988181242" class="btn-white">+56 9 8818 1242 →</a>
+    <a href="mailto:info@i-thinnk.com" class="btn-outline-white">info@i-thinnk.com</a>
+  </div>
+</section>
+
+<footer>
+  <a href="#" class="footer-logo">i<span>+</span>Thinnk®</a>
+  <span class="footer-copy">© 2025 i+Thinnk® · Los Ángeles, Chile · Todos los derechos reservados</span>
+  <div class="footer-links">
+    <a href="#servicios">Servicios</a>
+    <a href="#saleslab">Sales Lab</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);} });
+  }, {threshold:0.06});
+  reveals.forEach(el => obs.observe(el));
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    nav.style.borderBottomColor = window.scrollY > 40 ? 'rgba(0,0,0,0.18)' : 'rgba(0,0,0,0.08)';
+  });
+</script>
+</body>
+</html>

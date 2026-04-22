@@ -139,23 +139,57 @@
 
   /* MOBILE */
   @media(max-width:768px){
-    nav{padding:16px 20px} .nav-links{display:none}
+    nav{padding:14px 20px}
+    .nav-links{display:none}
+    .logo{font-size:17px}
+
     .hero{grid-template-columns:1fr;min-height:auto}
-    .hero-left{padding:100px 20px 52px;border-right:none;border-bottom:1px solid var(--border-md)}
-    .hero-right{min-height:280px}
-    .services,.saleslab{padding:64px 20px}
-    .services-header,.saleslab-header{flex-direction:column;align-items:flex-start}
+    .hero-left{padding:90px 20px 40px;border-right:none;border-bottom:1px solid var(--border-md)}
+    .hero h1{font-size:clamp(38px,11vw,56px);letter-spacing:-2px}
+    .hero-sub{font-size:14px;max-width:100%}
+    .hero-right{min-height:260px;display:block}
+    .hero-data{grid-template-columns:1fr 1fr 1fr}
+    .hero-metric{padding:14px 10px}
+    .hero-metric-num{font-size:20px}
+    .hero-metric-label{font-size:8px}
+
+    .ticker-text{font-size:9px;letter-spacing:1px}
+
+    .services{padding:52px 20px}
+    .services-header{flex-direction:column;align-items:flex-start;margin-bottom:36px}
     .services-grid{grid-template-columns:1fr}
-    .ai-section{grid-template-columns:1fr}
-    .ai-left{padding:64px 20px;border-right:none;border-bottom:1px solid var(--border-md)}
-    .ai-right{padding:32px 20px}
+    .service-card{padding:32px 24px}
+
+    .ai-apple-intro{padding:52px 20px 36px;max-width:100%}
+    .ai-apple-title{font-size:clamp(28px,9vw,44px);letter-spacing:-1.5px}
+    .ai-apple-blocks{grid-template-columns:1fr}
+    .ai-block{padding:36px 24px}
+
     .about{grid-template-columns:1fr}
-    .about-left{padding:64px 20px;border-right:none}
-    .about-right{min-height:280px}
+    .about-left{padding:52px 20px;border-right:none}
+    .about-quote{font-size:clamp(18px,6vw,26px)}
+    .about-right{min-height:260px}
+    .stat-row{flex-wrap:wrap}
+    .stat{min-width:30%}
+
+    .saleslab{padding:52px 20px}
+    .saleslab-header{flex-direction:column;align-items:flex-start;margin-bottom:36px}
     .saleslab-grid{grid-template-columns:1fr}
-    .cta{grid-template-columns:1fr;gap:40px;padding:64px 20px}
-    .cta-right{padding-left:0;border-left:none;border-top:1px solid rgba(255,255,255,0.08);padding-top:40px}
-    footer{flex-direction:column;padding:24px 20px;gap:12px}
+    .sl-card{padding:24px 20px}
+
+    .cta{grid-template-columns:1fr;gap:32px;padding:52px 20px}
+    .cta h2{font-size:clamp(32px,10vw,48px);letter-spacing:-1.5px}
+    .cta-right{padding-left:0;border-left:none;border-top:1px solid rgba(184,151,90,0.2);padding-top:32px}
+    .btn-white,.btn-outline-white{width:100%;text-align:center;padding:14px 20px}
+
+    footer{flex-direction:column;align-items:flex-start;padding:24px 20px;gap:14px}
+    .footer-links{flex-wrap:wrap;gap:16px}
+  }
+
+  @media(max-width:390px){
+    .hero h1{font-size:34px}
+    .hero-data{grid-template-columns:1fr 1fr 1fr}
+    .hero-metric-num{font-size:18px}
   }
 
   /* REVEAL */

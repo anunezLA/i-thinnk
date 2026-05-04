@@ -1,36 +1,81 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>i+Thinnk® — Ingeniería Industrial con Inteligencia</title>
-<meta name="description" content="Transformamos complejidad industrial en resultados con ingeniería avanzada, estrategia y tecnología AI aplicada.">
-<link rel="canonical" href="https://i-thinnk.com/" />
+<meta name="description" content="Transformamos complejidad industrial en resultados con ingeniería avanzada, estrategia y tecnología AI aplicada a procesos industriales reales.">
+<meta name="author" content="i+Thinnk®">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="canonical" href="https://i-thinnk.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://i-thinnk.com/">
+<meta property="og:title" content="i+Thinnk® — Ingeniería Industrial con Inteligencia">
+<meta property="og:description" content="Transformamos complejidad industrial en resultados con ingeniería avanzada, estrategia y tecnología AI aplicada.">
+<meta property="og:image" content="https://i-thinnk.com/img/hero-mill.jpg">
+<meta property="og:locale" content="es_CL">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="i+Thinnk® — Ingeniería Industrial con Inteligencia">
+<meta name="twitter:description" content="Transformamos complejidad industrial en resultados con ingeniería avanzada, estrategia y tecnología AI aplicada.">
+<meta name="twitter:image" content="https://i-thinnk.com/img/hero-mill.jpg">
+
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230A0A0A'/%3E%3Ctext x='16' y='22' font-family='sans-serif' font-size='18' font-weight='700' fill='%23B8975A' text-anchor='middle'%3Ei%2B%3C/text%3E%3C/svg%3E">
+
+<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "i+Thinnk®",
+  "description": "Ingeniería industrial con inteligencia. Servicios de gestión de proyectos, ingeniería de procesos, equipamiento y estrategia industrial con tecnología AI aplicada.",
+  "url": "https://i-thinnk.com",
+  "telephone": "+56988181242",
+  "email": "info@i-thinnk.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Los Ángeles",
+    "addressRegion": "Biobío",
+    "addressCountry": "CL"
+  },
+  "areaServed": "CL"
+}
+</script>
+
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
     --white:#FFFFFF; --off:#FAFAF8; --light:#F5F0E8; --mid:#C9B99A;
-    --muted:#9A8B78; --gold:#B8975A; --gold-light:#F5EDD9; --dark:#1A1410; --black:#0A0A0A;
+    --muted:#7A6B58; --gold:#B8975A; --gold-light:#F5EDD9; --dark:#1A1410; --black:#0A0A0A;
+    --tech:#4A6B7A; --tech-light:#E4ECF0; --tech-deep:#2F4855;
     --border:rgba(10,10,10,0.07); --border-md:rgba(10,10,10,0.12); --border-dk:rgba(10,10,10,0.22);
-    
-    --mono:'DM Mono',monospace; --sans:'DM Sans',sans-serif; --display:'Syne',sans-serif;
+    --mono:'DM Mono',ui-monospace,monospace;
+    --sans:'DM Sans',system-ui,sans-serif;
+    --display:'Syne',system-ui,sans-serif;
   }
-  html { scroll-behavior: smooth; }
-  body { background:var(--white); color:var(--black); font-family:var(--sans); font-weight:300; line-height:1.6; overflow-x:hidden; max-width:100vw; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--white); color:var(--black); font-family:var(--sans); font-weight:300; line-height:1.6; overflow-x:hidden; max-width:100vw; -webkit-font-smoothing:antialiased; }
+  a:focus-visible, button:focus-visible { outline:2px solid var(--gold); outline-offset:2px; }
   ::-webkit-scrollbar{width:2px} ::-webkit-scrollbar-track{background:var(--off)} ::-webkit-scrollbar-thumb{background:var(--mid)}
- 
+  .skip-link { position:absolute; left:-9999px; top:0; background:var(--black); color:var(--gold); padding:10px 16px; z-index:200; font-family:var(--mono); font-size:11px; letter-spacing:1.5px; text-transform:uppercase; }
+  .skip-link:focus { left:8px; top:8px; }
+
   /* NAV */
   nav { position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:20px 52px; background:rgba(255,255,255,0.93); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-bottom:1px solid var(--border); transition:border-color 0.3s; }
-  .logo { font-family:var(--sans); font-weight:700; font-size:22px; letter-spacing:3px; color:var(--black); text-decoration:none; font-stretch:expanded; -webkit-text-stroke:0.3px var(--black); word-spacing:-2px; }
-  .logo span { color:var(--black); font-weight:700; }
+  .logo { font-family:var(--sans); font-weight:700; font-size:22px; letter-spacing:3px; color:var(--black); text-decoration:none; -webkit-text-stroke:0.3px var(--black); word-spacing:-2px; }
   .nav-links { display:flex; gap:36px; list-style:none; }
   .nav-links a { font-size:11px; font-weight:400; letter-spacing:2px; text-transform:uppercase; color:var(--muted); text-decoration:none; transition:color 0.2s; }
   .nav-links a:hover { color:var(--black); }
   .nav-cta { font-family:var(--sans); font-size:12px; font-weight:500; padding:9px 22px; background:var(--black); color:var(--gold); border:none; border-radius:1px; cursor:pointer; text-decoration:none; transition:all 0.2s; }
-  .nav-cta:hover { background:var(--black); }
 
   /* HERO */
   .hero { min-height:100vh; display:grid; grid-template-columns:1fr 1fr; border-bottom:1px solid var(--border-md); padding-top:64px; }
@@ -41,12 +86,11 @@
   .hero h1 { font-family:var(--display); font-weight:800; font-size:clamp(48px,6vw,82px); line-height:0.93; letter-spacing:-3px; color:var(--black); margin-bottom:32px; }
   .hero h1 .muted { color:var(--mid); }
   .hero-sub { font-size:15px; font-weight:300; color:var(--muted); max-width:400px; line-height:1.75; margin-bottom:48px; border-left:2px solid var(--gold-light); padding-left:18px; }
-  .hero-actions { display:flex; gap:12px; align-items:center; }
+  .hero-actions { display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
   .btn-primary { font-family:var(--sans); font-size:12px; font-weight:500; letter-spacing:0.5px; padding:13px 28px; background:var(--black); color:var(--gold); border:none; border-radius:1px; cursor:pointer; text-decoration:none; display:inline-block; transition:all 0.2s; }
-  .btn-primary:hover { background:var(--black); }
   .btn-ghost { font-family:var(--sans); font-size:12px; font-weight:400; letter-spacing:0.5px; padding:13px 28px; background:transparent; color:var(--muted); border:1px solid var(--border-dk); border-radius:1px; cursor:pointer; text-decoration:none; display:inline-block; transition:all 0.2s; }
   .btn-ghost:hover { color:var(--black); border-color:var(--black); }
-  .hero-right { display:flex; flex-direction:column; justify-content:flex-end; background:var(--off); position:relative; overflow:hidden; }
+  .hero-right { display:flex; flex-direction:column; justify-content:flex-end; background:var(--off); position:relative; overflow:hidden; min-height:480px; }
   .hero-right img { width:100%; height:100%; object-fit:cover; filter:grayscale(100%) contrast(1.05) brightness(0.88); display:block; position:absolute; inset:0; }
   .hero-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(255,255,255,0.9) 0%,rgba(255,255,255,0.05) 55%); }
   .hero-data { position:relative; z-index:2; display:grid; grid-template-columns:1fr 1fr 1fr; gap:1px; background:var(--border-md); border-top:1px solid var(--border-md); }
@@ -59,17 +103,16 @@
   .ticker-track { display:flex; width:max-content; animation:ticker 35s linear infinite; }
   .ticker-item { display:flex; align-items:center; gap:28px; padding:0 28px; white-space:nowrap; }
   .ticker-text { font-family:var(--mono); font-size:10px; color:#94A3B8; letter-spacing:2px; text-transform:uppercase; }
-  .ticker-sep { color:#B8975A; font-size:10px; opacity:0.5; }
+  .ticker-sep { color:var(--gold); font-size:10px; opacity:0.5; }
   @keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 
-  /* SECTION HELPERS */
+  /* SECTIONS */
   .section-label { font-family:var(--mono); font-size:10px; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold); margin-bottom:16px; }
   .section-title { font-family:var(--display); font-weight:800; font-size:clamp(28px,3.5vw,44px); letter-spacing:-1.5px; line-height:1.05; color:var(--black); }
   .section-sub { font-size:14px; font-weight:300; color:var(--muted); line-height:1.75; max-width:420px; }
 
-  /* SERVICES */
   .services { padding:100px 52px; background:var(--white); border-bottom:1px solid var(--border-md); }
-  .services-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:60px; gap:40px; }
+  .services-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:60px; gap:40px; flex-wrap:wrap; }
   .services-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--border-md); border:1px solid var(--border-md); }
   .service-card { background:var(--white); padding:44px 40px; transition:background 0.25s; position:relative; overflow:hidden; }
   .service-card::after { content:''; position:absolute; bottom:0; left:0; right:0; height:1px; background:var(--gold); transform:scaleX(0); transform-origin:left; transition:transform 0.35s ease; }
@@ -81,18 +124,21 @@
   .service-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:22px; }
   .tag { font-family:var(--mono); font-size:10px; color:#8A6E3E; background:var(--gold-light); padding:3px 10px; border-radius:1px; }
 
-  /* AI APPLE STYLE */
+  /* AI section — steel-blue accent */
   .ai-apple { background:var(--white); border-bottom:1px solid var(--border-md); }
   .ai-apple-intro { padding:100px 52px 72px; border-bottom:1px solid var(--border-md); max-width:800px; }
-  .ai-apple-title { font-family:var(--display); font-weight:800; font-size:clamp(36px,5vw,62px); letter-spacing:-2.5px; line-height:1.05; color:var(--black); margin-top:16px; margin-bottom:20px; }
+  .ai-apple .section-label { color:var(--tech); }
+  .ai-apple-title { font-family:var(--display); font-weight:800; font-size:clamp(36px,5vw,62px); letter-spacing:-2.5px; line-height:1.05; color:var(--black); margin-bottom:20px; }
   .ai-apple-sub { font-size:16px; font-weight:300; color:var(--muted); line-height:1.75; max-width:520px; }
   .ai-apple-blocks { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border-md); }
   .ai-block { background:var(--off); padding:56px 44px; }
   .ai-block-dark { background:var(--black); }
-  .ai-block-label { font-family:var(--mono); font-size:10px; color:var(--gold); letter-spacing:2px; margin-bottom:32px; }
+  .ai-block-label { font-family:var(--mono); font-size:10px; color:var(--tech); letter-spacing:2px; margin-bottom:32px; }
   .ai-block-headline { font-family:var(--display); font-weight:800; font-size:clamp(22px,2.5vw,30px); letter-spacing:-1px; line-height:1.1; color:var(--black); margin-bottom:20px; }
   .ai-block-body { font-size:13px; font-weight:300; color:var(--muted); line-height:1.8; }
-  @media(max-width:768px){ .ai-apple-intro{padding:64px 20px 48px} .ai-apple-blocks{grid-template-columns:1fr} }
+  .ai-block-dark .ai-block-label { color:#5D7A88; }
+  .ai-block-dark .ai-block-headline { color:var(--white); }
+  .ai-block-dark .ai-block-body { color:#8FA3AE; }
 
   /* ABOUT */
   .about { display:grid; grid-template-columns:1fr 1fr; border-bottom:1px solid var(--border-md); }
@@ -110,7 +156,7 @@
 
   /* SALES LAB */
   .saleslab { padding:100px 52px; background:var(--off); border-bottom:1px solid var(--border-md); }
-  .saleslab-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:60px; gap:40px; }
+  .saleslab-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:60px; gap:40px; flex-wrap:wrap; }
   .saleslab-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border-md); border:1px solid var(--border-md); }
   .sl-card { background:var(--white); padding:32px 28px; transition:background 0.2s; }
   .sl-card:hover { background:var(--gold-light); }
@@ -123,90 +169,48 @@
   .cta h2 { font-family:var(--display); font-size:clamp(36px,5vw,60px); font-weight:800; letter-spacing:-2.5px; color:var(--white); line-height:0.95; }
   .cta h2 span { color:var(--gold); }
   .cta-right { display:flex; flex-direction:column; gap:14px; border-left:1px solid rgba(184,151,90,0.25); padding-left:60px; }
-  .cta-right p { font-size:14px; font-weight:300; color:#6B5E4A; line-height:1.7; margin-bottom:8px; }
-  .btn-white { font-family:var(--sans); font-size:12px; font-weight:500; padding:13px 28px; background:var(--gold); color:var(--black); border:none; border-radius:1px; cursor:pointer; text-decoration:none; display:inline-block; transition:opacity 0.2s; text-align:center; }
+  .cta-right p { font-size:14px; font-weight:300; color:#A89376; line-height:1.7; margin-bottom:8px; }
+  .btn-white { font-family:var(--sans); font-size:12px; font-weight:500; padding:13px 28px; background:var(--gold); color:var(--black); border-radius:1px; text-decoration:none; display:inline-block; text-align:center; transition:opacity 0.2s; }
   .btn-white:hover { opacity:0.88; }
-  .btn-outline-white { font-family:var(--sans); font-size:12px; font-weight:400; padding:13px 28px; background:transparent; color:#6B5E4A; border:1px solid rgba(184,151,90,0.25); border-radius:1px; cursor:pointer; text-decoration:none; display:inline-block; transition:all 0.2s; text-align:center; }
+  .btn-outline-white { font-family:var(--sans); font-size:12px; font-weight:400; padding:13px 28px; background:transparent; color:#A89376; border:1px solid rgba(184,151,90,0.25); border-radius:1px; text-decoration:none; display:inline-block; text-align:center; transition:all 0.2s; }
   .btn-outline-white:hover { color:var(--gold); border-color:var(--gold); }
 
   /* FOOTER */
   footer { padding:28px 52px; background:var(--dark); border-top:1px solid rgba(184,151,90,0.12); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
   .footer-logo { font-family:var(--sans); font-weight:700; font-size:20px; letter-spacing:3px; color:var(--white); text-decoration:none; -webkit-text-stroke:0.3px var(--white); }
-  .footer-logo span { color:var(--white); font-weight:700; }
-  .footer-copy { font-family:var(--mono); font-size:10px; color:#4A3F30; letter-spacing:0.5px; }
+  .footer-copy { font-family:var(--mono); font-size:10px; color:#7A6B58; letter-spacing:0.5px; }
   .footer-links { display:flex; gap:28px; }
-  .footer-links a { font-family:var(--mono); font-size:10px; color:#6B5E4A; text-decoration:none; letter-spacing:1.5px; text-transform:uppercase; transition:color 0.2s; }
+  .footer-links a { font-family:var(--mono); font-size:10px; color:#A89376; text-decoration:none; letter-spacing:1.5px; text-transform:uppercase; transition:color 0.2s; }
   .footer-links a:hover { color:var(--gold); }
-
-  /* MOBILE */
-  @media(max-width:768px){
-    html, body { overflow-x:hidden; width:100%; }
-
-    nav{padding:14px 20px}
-    .nav-links{display:none}
-    .logo{font-size:17px}
-    .nav-cta{font-size:11px; padding:8px 14px}
-
-    .hero{grid-template-columns:1fr;min-height:auto;width:100%}
-    .hero-left{padding:90px 20px 40px;border-right:none;border-bottom:1px solid var(--border-md);width:100%;box-sizing:border-box}
-    .hero h1{font-size:clamp(36px,10vw,52px);letter-spacing:-2px}
-    .hero-sub{font-size:14px;max-width:100%}
-    .hero-actions{flex-direction:column;align-items:stretch}
-    .btn-primary,.btn-ghost{text-align:center;width:100%}
-    .hero-right{min-height:240px;width:100%}
-    .hero-data{grid-template-columns:1fr 1fr 1fr;width:100%}
-    .hero-metric{padding:12px 8px}
-    .hero-metric-num{font-size:20px}
-    .hero-metric-label{font-size:7px;letter-spacing:0.5px}
-
-    .ticker{width:100%;overflow:hidden}
-
-    .services{padding:48px 20px;width:100%;box-sizing:border-box}
-    .services-header{flex-direction:column;align-items:flex-start;margin-bottom:32px;gap:16px}
-    .services-grid{grid-template-columns:1fr;width:100%}
-    .service-card{padding:28px 20px;width:100%;box-sizing:border-box}
-
-    .ai-apple{width:100%}
-    .ai-apple-intro{padding:48px 20px 32px;max-width:100%;box-sizing:border-box}
-    .ai-apple-title{font-size:clamp(26px,8vw,40px);letter-spacing:-1px}
-    .ai-apple-blocks{grid-template-columns:1fr;width:100%}
-    .ai-block{padding:32px 20px;width:100%;box-sizing:border-box}
-
-    .about{grid-template-columns:1fr;width:100%}
-    .about-left{padding:48px 20px;border-right:none;width:100%;box-sizing:border-box}
-    .about-quote{font-size:clamp(18px,6vw,24px)}
-    .about-right{min-height:240px;width:100%}
-    .stat-row{display:grid;grid-template-columns:1fr 1fr 1fr}
-    .stat{padding:14px 10px}
-    .stat-num{font-size:22px}
-
-    .saleslab{padding:48px 20px;width:100%;box-sizing:border-box}
-    .saleslab-inner{padding:32px 20px}
-    .saleslab-header{flex-direction:column;align-items:flex-start;margin-bottom:32px;gap:16px}
-    .saleslab-grid{grid-template-columns:1fr;width:100%}
-    .sl-card{padding:24px 20px;width:100%;box-sizing:border-box}
-
-    .cta{grid-template-columns:1fr;gap:32px;padding:48px 20px;width:100%;box-sizing:border-box}
-    .cta h2{font-size:clamp(30px,9vw,44px);letter-spacing:-1.5px}
-    .cta-right{padding-left:0;border-left:none;border-top:1px solid rgba(184,151,90,0.2);padding-top:28px}
-    .btn-white,.btn-outline-white{width:100%;text-align:center;padding:14px 20px;box-sizing:border-box}
-
-    footer{flex-direction:column;align-items:flex-start;padding:24px 20px;gap:14px;width:100%;box-sizing:border-box}
-    .footer-links{flex-wrap:wrap;gap:16px}
-  }
-
-  @media(max-width:390px){
-    .hero h1{font-size:32px}
-    .hero-metric-num{font-size:16px}
-    .hero-metric-label{font-size:6px}
-  }
 
   /* REVEAL */
   .reveal { opacity:0; transform:translateY(20px); transition:opacity 0.65s ease,transform 0.65s ease; }
   .reveal.visible { opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity:1; transform:none; transition:none; }
+    .ticker-track { animation:none; }
+    .hero-badge::before { animation:none; }
+  }
+
+  /* MOBILE */
+  @media(max-width:768px){
+    nav{padding:14px 20px} .nav-links{display:none} .logo{font-size:17px} .nav-cta{font-size:11px; padding:8px 14px}
+    .hero{grid-template-columns:1fr; min-height:auto}
+    .hero-left{padding:90px 20px 40px; border-right:none; border-bottom:1px solid var(--border-md)}
+    .hero-right{min-height:380px}
+    .services,.saleslab{padding:60px 20px}
+    .services-grid,.saleslab-grid,.ai-apple-blocks{grid-template-columns:1fr}
+    .ai-apple-intro{padding:60px 20px 40px}
+    .about{grid-template-columns:1fr} .about-left{padding:60px 20px; border-right:none}
+    .about-right{min-height:340px}
+    .cta{padding:60px 20px; grid-template-columns:1fr; gap:30px} .cta-right{padding-left:0; border-left:none}
+    footer{padding:20px; flex-direction:column; align-items:flex-start}
+  }
 </style>
 </head>
 <body>
+
+<a class="skip-link" href="#main">Saltar al contenido</a>
 
 <nav>
   <a href="#" class="logo">i<span>+</span>Thinnk®</a>
@@ -219,6 +223,8 @@
   <a href="#contacto" class="nav-cta">Agenda una consulta</a>
 </nav>
 
+<main id="main">
+
 <section class="hero">
   <div class="hero-left reveal">
     <div class="hero-badge">Sistema activo</div>
@@ -230,7 +236,7 @@
     </div>
   </div>
   <div class="hero-right">
-    <img src="PHOTO20260410145437.jpg" alt="Planta industrial" onerror="this.src='https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=1200&q=80'">
+    <img src="img/hero-mill.jpg" alt="Planta de molienda industrial" width="1600" height="1067" loading="eager" decoding="async">
     <div class="hero-overlay"></div>
     <div class="hero-data">
       <div class="hero-metric"><div class="hero-metric-num">4</div><div class="hero-metric-label">Áreas de servicio</div></div>
@@ -309,9 +315,9 @@
       <p class="ai-block-body">Modelos de mantenimiento predictivo que analizan variables de tu planta en tiempo real y alertan con días de anticipación.</p>
     </div>
     <div class="ai-block reveal ai-block-dark">
-      <div class="ai-block-label" style="color:#555552">02</div>
-      <div class="ai-block-headline" style="color:var(--white)">Optimización<br>continua y automática.</div>
-      <p class="ai-block-body" style="color:#666663">Algoritmos que ajustan parámetros de proceso en tiempo real para maximizar rendimiento y reducir consumo energético.</p>
+      <div class="ai-block-label">02</div>
+      <div class="ai-block-headline">Optimización<br>continua y automática.</div>
+      <p class="ai-block-body">Algoritmos que ajustan parámetros de proceso en tiempo real para maximizar rendimiento y reducir consumo energético.</p>
     </div>
     <div class="ai-block reveal">
       <div class="ai-block-label">03</div>
@@ -333,7 +339,7 @@
     </div>
   </div>
   <div class="about-right">
-    <img src="PHOTO20260410145447.jpg" alt="Terreno industrial" onerror="this.src='https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=900&q=80'">
+    <img src="img/control-room.jpg" alt="Sala de control industrial" width="1400" height="933" loading="lazy" decoding="async">
     <div class="about-caption">// Proyecto activo — terreno</div>
   </div>
 </section>
@@ -362,9 +368,11 @@
   </div>
 </section>
 
+</main>
+
 <footer>
   <a href="#" class="footer-logo">i<span>+</span>Thinnk®</a>
-  <span class="footer-copy">© 2025 i+Thinnk® · Los Ángeles, Chile · Todos los derechos reservados</span>
+  <span class="footer-copy">© 2026 i+Thinnk® · Los Ángeles, Chile · Todos los derechos reservados</span>
   <div class="footer-links">
     <a href="#servicios">Servicios</a>
     <a href="#saleslab">Sales Lab</a>
@@ -373,15 +381,21 @@
 </footer>
 
 <script>
-  const reveals = document.querySelectorAll('.reveal');
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);} });
-  }, {threshold:0.06});
-  reveals.forEach(el => obs.observe(el));
-  const nav = document.querySelector('nav');
-  window.addEventListener('scroll', () => {
-    nav.style.borderBottomColor = window.scrollY > 40 ? 'rgba(0,0,0,0.18)' : 'rgba(0,0,0,0.08)';
-  });
+  (function(){
+    var reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+      }, { threshold: 0.06 });
+      reveals.forEach(function(el){ obs.observe(el); });
+    } else {
+      reveals.forEach(function(el){ el.classList.add('visible'); });
+    }
+    var nav = document.querySelector('nav');
+    window.addEventListener('scroll', function(){
+      nav.style.borderBottomColor = window.scrollY > 40 ? 'rgba(0,0,0,0.18)' : 'rgba(0,0,0,0.08)';
+    }, { passive: true });
+  })();
 </script>
 </body>
 </html>

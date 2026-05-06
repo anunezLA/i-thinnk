@@ -8,7 +8,7 @@
 <meta name="author" content="i+Thinnk®">
 <meta name="theme-color" content="#0A0A0A">
 <link rel="canonical" href="https://i-thinnk.com/">
-<meta name="google-site-verification" content="XXXXXXXXXXXXXX">
+
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://i-thinnk.com/">
@@ -194,17 +194,58 @@
 
   /* MOBILE */
   @media(max-width:768px){
-    nav{padding:14px 20px} .nav-links{display:none} .logo{font-size:17px} .nav-cta{font-size:11px; padding:8px 14px}
+    /* Nav — logo + botón compacto, sin overflow */
+    nav{padding:12px 16px; gap:8px}
+    .nav-links{display:none}
+    .logo{font-size:16px; letter-spacing:2px}
+    .nav-cta{font-size:10px; padding:7px 12px; white-space:nowrap}
+
+    /* Hero — columna única, padding superior aumentado para clearear nav */
     .hero{grid-template-columns:1fr; min-height:auto}
-    .hero-left{padding:90px 20px 40px; border-right:none; border-bottom:1px solid var(--border-md)}
-    .hero-right{min-height:380px}
-    .services,.saleslab{padding:60px 20px}
+    .hero-left{padding:100px 20px 44px; border-right:none; border-bottom:1px solid var(--border-md)}
+    .hero h1{font-size:clamp(40px,11vw,62px); letter-spacing:-2px}
+    .hero-sub{font-size:14px; max-width:100%}
+    .hero-actions{flex-direction:column; align-items:stretch}
+    .btn-primary,.btn-ghost{text-align:center; width:100%}
+    .hero-right{min-height:320px}
+    .hero-data{grid-template-columns:repeat(3,1fr)}
+    .hero-metric-num{font-size:22px}
+    .hero-metric-label{font-size:8px}
+
+    /* Ticker — sin corte lateral */
+    .ticker{overflow:hidden; width:100%}
+
+    /* Servicios */
+    .services,.saleslab{padding:56px 16px}
+    .services-header,.saleslab-header{flex-direction:column; align-items:flex-start; margin-bottom:36px; gap:16px}
+    .section-sub{max-width:100%}
     .services-grid,.saleslab-grid,.ai-apple-blocks{grid-template-columns:1fr}
-    .ai-apple-intro{padding:60px 20px 40px}
-    .about{grid-template-columns:1fr} .about-left{padding:60px 20px; border-right:none}
-    .about-right{min-height:340px}
-    .cta{padding:60px 20px; grid-template-columns:1fr; gap:30px} .cta-right{padding-left:0; border-left:none}
-    footer{padding:20px; flex-direction:column; align-items:flex-start}
+    .service-card{padding:32px 20px}
+    .saleslab-grid{gap:1px}
+    .sl-card{padding:28px 20px}
+
+    /* AI */
+    .ai-apple-intro{padding:56px 16px 36px}
+    .ai-block{padding:40px 20px}
+
+    /* About */
+    .about{grid-template-columns:1fr}
+    .about-left{padding:56px 16px; border-right:none}
+    .about-right{min-height:280px}
+    .about-quote{font-size:clamp(18px,5vw,26px)}
+    .stat-row{flex-direction:row}
+    .stat{padding:16px 12px}
+    .stat-num{font-size:22px}
+
+    /* CTA */
+    .cta{padding:56px 16px; grid-template-columns:1fr; gap:28px}
+    .cta h2{font-size:clamp(32px,9vw,48px); letter-spacing:-1.5px}
+    .cta-right{padding-left:0; border-left:none}
+    .btn-white,.btn-outline-white{text-align:center; display:block}
+
+    /* Footer */
+    footer{padding:20px 16px; flex-direction:column; align-items:flex-start; gap:12px}
+    .footer-links{flex-wrap:wrap; gap:16px}
   }
 </style>
 </head>

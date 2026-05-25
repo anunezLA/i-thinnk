@@ -283,12 +283,14 @@
 <script type="text/babel">
   function App() {
     React.useEffect(() => {
-      const reveals = document.querySelectorAll('.reveal');
-      const obs = new IntersectionObserver((entries) => {
-        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
       }, { threshold: 0.06 });
-      reveals.forEach(el => obs.observe(el));
-      return () => obs.disconnect();
+      const observe = () => document.querySelectorAll('.reveal:not(.visible)').forEach(el => io.observe(el));
+      observe();
+      const mo = new MutationObserver(observe);
+      mo.observe(document.getElementById('root'), { childList: true, subtree: true });
+      return () => { io.disconnect(); mo.disconnect(); };
     }, []);
     return (
       <>

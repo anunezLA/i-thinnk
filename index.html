@@ -203,9 +203,9 @@
     .nav-toggle { display:block; }
     .logo { font-size:18px; letter-spacing:2.5px; }
 
-    .hero { grid-template-columns:1fr; min-height:auto; padding-top:60px; }
-    .hero-left { padding:60px 22px 48px; border-right:none; border-bottom:1px solid rgba(10,10,10,0.12); }
-    .hero h1 { font-size:46px; letter-spacing:-2px; line-height:0.95; margin-bottom:24px; }
+    .hero { grid-template-columns:1fr; min-height:auto; padding-top:60px; overflow:hidden; }
+    .hero-left { padding:60px 22px 48px; border-right:none; border-bottom:1px solid rgba(10,10,10,0.12); overflow:hidden; }
+    .hero h1 { font-size:clamp(32px,9vw,42px); letter-spacing:-1.5px; line-height:0.95; margin-bottom:24px; word-break:break-word; }
     .hero-badge { margin-bottom:28px; font-size:9.5px; letter-spacing:1.2px; }
     .hero-sub { font-size:14px; margin-bottom:32px; max-width:none; }
     .hero-actions { gap:10px; }

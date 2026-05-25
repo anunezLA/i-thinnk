@@ -1,0 +1,184 @@
+/* ============================================================
+   i+Thinnk® — Colors & Type Tokens
+   Source: i-thinnk.com (live CSS extracted)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@300;400&display=swap');
+
+:root {
+  /* ---------- BRAND PALETTE ---------- */
+  /* Cream / paper backgrounds — the brand "looks white" but is warm */
+  --color-white:        #FFFFFF;
+  --color-off:          #FAFAF8;   /* hero-right, neutral cards */
+  --color-light:        #F5F0E8;   /* warm cream */
+  --color-mid:          #C9B99A;   /* dusty taupe */
+  --color-muted:        #9A8B78;   /* secondary copy */
+  --color-gold:         #B8975A;   /* PRIMARY accent — antique gold (warm/human surfaces) */
+  --color-gold-light:   #F5EDD9;   /* tag chip background */
+  --color-gold-deep:    #8A6E3E;   /* tag chip text */
+  --color-tech:         #4A6B7A;   /* SECONDARY accent — steel-blue (AI / data / technical surfaces) */
+  --color-tech-light:   #E4ECF0;   /* tech chip background */
+  --color-tech-deep:    #2F4855;   /* tech chip text */
+  --color-dark:         #1A1410;   /* footer, deep ink */
+  --color-black:        #0A0A0A;   /* on-black surfaces, primary text */
+  --color-slate:        #94A3B8;   /* ticker text on black */
+
+  /* Borders — black @ low alpha */
+  --border:             rgba(10,10,10,0.07);
+  --border-md:          rgba(10,10,10,0.12);
+  --border-dk:          rgba(10,10,10,0.22);
+  --border-gold-soft:   rgba(184,151,90,0.25);
+  --border-gold-faint:  rgba(184,151,90,0.12);
+
+  /* ---------- SEMANTIC TOKENS ---------- */
+  --bg:                 var(--color-white);
+  --bg-alt:             var(--color-off);
+  --bg-warm:            var(--color-light);
+  --bg-inverse:         var(--color-black);
+  --bg-footer:          var(--color-dark);
+
+  --fg:                 var(--color-black);    /* primary text */
+  --fg-muted:           var(--color-muted);    /* secondary text */
+  --fg-quiet:           var(--color-mid);      /* tertiary / accent muted */
+  --fg-on-dark:         var(--color-white);
+  --fg-on-dark-muted:   #6B5E4A;               /* footer secondary */
+
+  --accent:             var(--color-gold);
+  --accent-soft-bg:     var(--color-gold-light);
+  --accent-deep:        var(--color-gold-deep);
+  --accent-tech:        var(--color-tech);
+  --accent-tech-soft:   var(--color-tech-light);
+  --accent-tech-deep:   var(--color-tech-deep);
+
+  /* ---------- TYPE FAMILIES ---------- */
+  --font-display:       'Syne', system-ui, sans-serif;        /* headlines, numbers */
+  --font-sans:          'DM Sans', system-ui, sans-serif;     /* body, UI */
+  --font-mono:          'DM Mono', ui-monospace, monospace;   /* labels, technical */
+
+  /* ---------- TYPE SCALE ---------- */
+  --fs-mono-xs:         9px;     /* mono captions, stat labels */
+  --fs-mono-sm:         10px;    /* section labels, ticker */
+  --fs-mono-md:         11px;    /* nav links */
+  --fs-body-sm:         12px;    /* button copy, sl-desc */
+  --fs-body:            13px;    /* card descriptions */
+  --fs-body-md:         14px;    /* about body */
+  --fs-body-lg:         15px;    /* hero sub */
+  --fs-body-xl:         16px;    /* section intro */
+  --fs-display-sm:      28px;    /* metric numbers, sub-headlines */
+  --fs-display-md:      clamp(28px, 3.5vw, 44px);   /* section titles */
+  --fs-display-lg:      clamp(36px, 5vw, 62px);     /* AI block titles */
+  --fs-display-xl:      clamp(48px, 6vw, 82px);     /* hero H1 */
+
+  --lh-tight:           0.93;
+  --lh-snug:            1.05;
+  --lh-snug-15:         1.15;
+  --lh-normal:          1.6;
+  --lh-relaxed:         1.75;
+  --lh-loose:           1.85;
+
+  --ls-headline:        -3px;
+  --ls-display:         -2.5px;
+  --ls-display-sm:      -1.5px;
+  --ls-tight:           -1px;
+  --ls-tight-sm:        -0.3px;
+  --ls-mono:            2px;
+  --ls-mono-wide:       2.5px;
+  --ls-nav:             3px;
+
+  /* ---------- LAYOUT ---------- */
+  --pad-edge:           52px;     /* desktop section padding */
+  --pad-edge-mobile:    20px;
+  --pad-section-y:      100px;
+  --gap-grid:           1px;      /* signature 1px hairline grid */
+  --radius:             1px;      /* almost-square — never rounded */
+
+  /* ---------- MOTION ---------- */
+  --ease-out:           cubic-bezier(0.16, 1, 0.3, 1);
+  --t-fast:             0.2s;
+  --t-base:             0.25s;
+  --t-slow:             0.35s;
+  --t-reveal:           0.65s;
+}
+
+/* ============================================================
+   SEMANTIC BASE STYLES — apply to plain HTML
+   ============================================================ */
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-weight: 300;
+  line-height: var(--lh-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, .h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--fs-display-xl);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-headline);
+  color: var(--fg);
+}
+
+h2, .h2 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--fs-display-md);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--ls-display-sm);
+  color: var(--fg);
+}
+
+h3, .h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.25;
+  letter-spacing: var(--ls-tight-sm);
+  color: var(--fg);
+}
+
+p { font-size: var(--fs-body-md); font-weight: 300; color: var(--fg-muted); line-height: var(--lh-relaxed); }
+
+code, kbd, samp, pre {
+  font-family: var(--font-mono);
+  font-size: var(--fs-body);
+}
+
+/* Mono "section label" — the // PREFIX label seen everywhere */
+.label-mono,
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-sm);
+  letter-spacing: var(--ls-mono-wide);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* Logo wordmark */
+.logo-wordmark {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: var(--ls-nav);
+  color: var(--fg);
+  text-decoration: none;
+  -webkit-text-stroke: 0.3px currentColor;
+  word-spacing: -2px;
+}
+
+/* Tag chip */
+.tag {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono-sm);
+  color: var(--accent-deep);
+  background: var(--accent-soft-bg);
+  padding: 3px 10px;
+  border-radius: var(--radius);
+  display: inline-block;
+}

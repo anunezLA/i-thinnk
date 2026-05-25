@@ -1,40 +1,80 @@
-# i+Thinnk® — Production site
+# i+Thinnk® — Sitio Web
 
-Single-file deploy package. Drop on any static host (GitHub Pages, Vercel, Netlify, Cloudflare Pages, S3, plain FTP).
+Sitio web oficial de **i+Thinnk®** — consultoría de ingeniería industrial e IA aplicada.
 
-## Contents
+Los Ángeles, Región del Biobío, Chile.
+
+## Estructura
+
 ```
-dist/
-├── index.html        ← single-page site, all CSS inlined
-└── img/
-    ├── hero-mill.jpg
-    └── control-room.jpg
+.
+├── index.html              # Página principal
+├── colors_and_type.css     # Tokens de color y tipografía (design system)
+├── components/             # Componentes React (JSX, transpilados en navegador)
+│   ├── Nav.jsx
+│   ├── Hero.jsx
+│   ├── Ticker.jsx
+│   ├── Services.jsx
+│   ├── Partners.jsx        # Red Tecnológica (Brenpower, Nexopel, ITPhotonics)
+│   ├── AIBlocks.jsx        # IA Industrial — 6 capacidades
+│   ├── About.jsx
+│   └── CTA.jsx
+└── assets/
+    └── partners/           # Logos de partners
+        ├── brenpower-logo.png
+        ├── nexopel-logo.png
+        └── itphotonics-logo.png
 ```
 
-## What's included
-- Full marketing site, no build step required
-- Inlined CSS, no external bundles
-- Self-hosted photography (no Unsplash hotlinks)
-- SEO: canonical URL, meta description, Open Graph, Twitter Card, JSON-LD `ProfessionalService`
-- Accessibility: skip-link, `<main>` landmark, focus-visible outlines, `prefers-reduced-motion` respected, AAA-passing body contrast (`#7A6B58`)
-- Performance: Google Fonts preconnect + `display=swap`, lazy-loaded About photo, intrinsic `width`/`height` on images (no CLS)
-- Mobile breakpoint at 768px
-- Inline SVG favicon (no extra request)
+## Secciones
 
-## Deploy to GitHub Pages
-1. Push the `dist/` folder contents to a new repo (or to a `gh-pages` branch).
-2. Settings → Pages → Source = main, folder = `/`.
-3. Add a `CNAME` file containing `i-thinnk.com` if pointing your custom domain.
-4. Done.
+1. **Hero** — Más rendimiento. Menos incertidumbre.
+2. **Servicios** — 5 áreas de servicio propias
+3. **Red Tecnológica** — Partners distribuidos e integrados
+4. **IA Industrial** — Frentes de expertise (predictivo, optimización, NIR, energía, trazabilidad, reportería)
+5. **Nosotros**
+6. **CTA + Footer**
 
-## Update the canonical URL
-The `<link rel="canonical">`, OG `og:url`, and OG `og:image` are pinned to `https://i-thinnk.com/`. If you deploy under a different domain, edit those three URLs.
+## Cómo correrlo localmente
 
-## Replacing photos
-Drop new files into `dist/img/` keeping the names `hero-mill.jpg` and `control-room.jpg`, OR update the two `<img src="img/...">` references in `index.html`.
+Es HTML puro con React + Babel cargados desde CDN. No requiere build.
 
-## What's NOT in here (intentional)
-- No analytics — add GA4 / Plausible / Fathom if you need it
-- No cookie banner — only required if you add tracking
-- No contact form — current CTAs go straight to `tel:` and `mailto:`
-- No service worker / offline mode
+```bash
+# Opción 1 — Python
+python3 -m http.server 8000
+
+# Opción 2 — Node
+npx serve .
+```
+
+Después, abrir `http://localhost:8000`.
+
+> Nota: abrir el `index.html` directamente con `file://` puede fallar a cargar los componentes JSX por restricciones de CORS. Siempre servir desde un servidor local.
+
+## Deploy
+
+Compatible con cualquier hosting estático: GitHub Pages, Netlify, Vercel, Cloudflare Pages, etc.
+
+### GitHub Pages
+1. Subir esta carpeta al repo
+2. Settings → Pages → Source: `main` branch, root
+3. URL: `https://<usuario>.github.io/<repo>/`
+
+## Logos de partners
+
+Los logos viven en `assets/partners/`. Cada card de Red Tecnológica usa:
+- Una silueta en steel-blue (`#2F4855`) por defecto vía CSS `mask-image`
+- El logo original a color al hacer hover/tap
+
+Para reemplazar un logo, simplemente sustituir el archivo PNG manteniendo el mismo nombre.
+
+## Stack
+
+- HTML5 estático
+- React 18 + Babel (vía CDN, sin build step)
+- CSS custom properties (design tokens en `colors_and_type.css`)
+- Fonts: Syne (display) · DM Sans (body) · DM Mono (mono) — desde Google Fonts
+
+---
+
+© i+Thinnk® · Los Ángeles, Chile

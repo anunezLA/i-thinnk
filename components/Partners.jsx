@@ -45,7 +45,7 @@ function PartnerCard({ p }) {
   const [revealed, setRevealed] = useState(false);
   return (
     <div
-      className={`partner-card reveal${revealed ? ' is-revealed' : ''}`}
+      className={`partner-card${revealed ? ' is-revealed' : ''}`}
       style={{ '--brand': p.brand }}
       onClick={() => setRevealed(r => !r)}
     >

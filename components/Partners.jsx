@@ -14,7 +14,7 @@ const PARTNERS = [
     name: 'Brenpower',
     logo: 'assets/partners/brenpower-logo.png',
     brand: '#5BB8C4',         /* Brenpower brand accent (from partners.js) */
-    needsDarkSlab: true,      /* logo is white-on-transparent → reveal on dark */
+    needsDarkSlab: false,      /* logo has dark letters on transparent bg */
     tagline: 'Monitoreo de vapor industrial en tiempo real',
     desc: 'Sensores y plataforma de telemetría para sistemas de vapor: detección temprana de pérdidas, eficiencia térmica y trazabilidad de consumos.',
     tags: ['Vapor', 'IoT', 'Eficiencia térmica'],
@@ -82,10 +82,6 @@ function Partners() {
       </div>
       <div className="partners-grid">
         {PARTNERS.map((p) => <PartnerCard p={p} key={p.name} />)}
-      </div>
-      <div className="partners-hint">
-        <span className="partners-hint-dot"></span>
-        Pasa el cursor o toca cada logo para ver el color de marca original.
       </div>
     </section>
   );

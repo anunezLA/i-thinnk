@@ -1,7 +1,7 @@
 /* global React */
 const TICKER_ITEMS = [
   'Gestión de Proyectos','Ingeniería de Procesos','Consultoría en Equipamiento',
-  'Estrategia Industrial','Activos Inmobiliarios','Red Tecnológica',
+  'Estrategia Industrial','Activos Inmobiliarios Industriales','Red Tecnológica',
   'Mantenimiento Predictivo','NIR en línea','Eficiencia Energética','Reportería Automática'
 ];
 function TickerRun() {

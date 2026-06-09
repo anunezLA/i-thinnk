@@ -16,7 +16,7 @@ const SERVICES = [
 
 const FEATURE_SERVICE = {
   num:'05 — ACTIVOS INMOBILIARIOS INDUSTRIALES',
-  title:'Gestión de Activos Inmobiliarios',
+  title:'Gestión de Activos Inmobiliarios Industriales',
   desc:'Identificamos, evaluamos y gestionamos terrenos, galpones y activos productivos. Decisiones inmobiliarias con criterio industrial: ubicación, factibilidad técnica y retorno medible.',
   tags:['Adquisición','Arriendo','Valorización','Industrial RE'],
 };

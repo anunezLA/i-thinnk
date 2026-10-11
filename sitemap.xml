@@ -2,8 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://i-thinnk.com/</loc>
-    <lastmod>2026-10-09</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-10-11</lastmod>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://i-thinnk.com/ideas/</loc>
+    <lastmod>2026-08-07</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://i-thinnk.com/ideas/2026-08-07-secador-cuello-de-botella/</loc>
+    <lastmod>2026-08-07</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://i-thinnk.com/ideas/2026-08-05-vapor-conversion-combustible/</loc>
+    <lastmod>2026-08-05</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://i-thinnk.com/ideas/2026-08-03-bases-tecnicas-rca/</loc>
+    <lastmod>2026-08-03</lastmod>
+    <priority>0.6</priority>
   </url>
 </urlset>

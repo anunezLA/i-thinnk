@@ -78,3 +78,8 @@ Para reemplazar un logo, simplemente sustituir el archivo PNG manteniendo el mis
 ---
 
 © i+Thinnk® · Los Ángeles, Chile
+
+## Sección Ideas
+Para publicar un post: agregar `ideas/posts/AAAA-MM-DD-slug.txt` (formato en `tools/build_ideas.py`) y hacer push a `main`.
+La acción de GitHub `build-ideas.yml` genera `/ideas/`, el bloque de la home y el sitemap automáticamente.
+Para despublicar: borrar el archivo `.txt` y la carpeta `ideas/<slug>/`.

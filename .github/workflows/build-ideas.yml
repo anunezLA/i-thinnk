@@ -1,0 +1,19 @@
+name: Generar sección Ideas
+on:
+  push:
+    branches: [main]
+    paths: ['ideas/posts/**', 'tools/build_ideas.py']
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/build_ideas.py
+      - name: Commit si hay cambios
+        run: |
+          git config user.name "i+Thinnk bot"
+          git config user.email "info@i-thinnk.com"
+          git add -A
+          git diff --cached --quiet || (git commit -m "Ideas: regenerar páginas, home y sitemap" && git push)

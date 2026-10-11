@@ -1,0 +1,13 @@
+title: El PDI se mide en la matriz, no en el camión
+tag: Calidad del pellet
+date: 2026-08-19
+---
+El PDI se certifica en la matriz, pero el pellet todavía tiene que llegar al camión.
+
+Incorporar equipos de transporte y manejo de materiales (elevadores, transportadores, sistemas neumáticos) dentro de una planta de alimento balanceado es una inversión que suele quedar en segundo plano frente al equipo de proceso principal.
+
+El índice de durabilidad (PDI) se certifica normalmente justo a la salida del enfriador, pero el pellet todavía recorre transportadores, elevadores y un sistema de carga antes de llegar a su destino.
+
+Cada caída libre y cada cambio de dirección agrega fricción e impacto adicional: un PDI que certificó bien en el laboratorio de planta puede llegar degradado al punto de descarga si el manejo de materiales no se diseñó pensando en minimizar esos impactos.
+
+¿Mediste alguna vez el PDI después del transporte, o solo a la salida del enfriador?

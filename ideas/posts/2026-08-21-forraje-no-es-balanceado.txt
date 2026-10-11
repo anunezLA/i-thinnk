@@ -1,0 +1,13 @@
+title: El forraje no se acondiciona como un balanceado
+tag: Acondicionamiento
+date: 2026-08-21
+---
+El acondicionamiento de un balanceado no sirve igual para forraje.
+
+Importar una peletizadora tipo olla para procesar alfalfa completa es una inversión frecuente en plantas que producen pellet de forraje para exportación o consumo animal directo.
+
+El acondicionamiento con vapor de un alimento balanceado busca gelatinizar el almidón de granos como maíz o soya, pero la alfalfa es forraje fibroso con muy poco almidón: su aglutinante natural es distinto, y la curva de humedad y temperatura que gelatiniza un balanceado no logra el mismo efecto en fibra.
+
+Usar la misma curva de acondicionamiento diseñada para grano en una línea que procesa forraje fibroso deja un pellet con menos cohesión de la esperada, aunque la peletizadora sea del mismo tipo y la humedad de entrada se vea dentro de rango en el instrumento.
+
+¿Tu curva de acondicionamiento está calibrada para grano, o para el forraje fibroso que realmente estás procesando?

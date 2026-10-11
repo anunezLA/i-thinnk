@@ -1,0 +1,13 @@
+title: Más capacidad instalada no es más homogeneidad de mezcla
+tag: Alimento balanceado
+date: 2026-08-17
+---
+Más capacidad instalada no garantiza más homogeneidad de mezcla.
+
+Importar una línea completa para fabricación de alimento animal, con capacidad de hasta 15 toneladas por hora, es una inversión que se repite en la industria de alimento balanceado de la región.
+
+La homogeneidad de una mezcla se mide con el coeficiente de variación (CV) de sus componentes, y el estándar de la industria exige un CV igual o menor a 5 %. Ese número depende del tiempo de mezclado disponible, no solo de la capacidad nominal del equipo dosificador.
+
+Cuando una línea nueva se dimensiona para un caudal más alto, el tiempo de mezclado por lote tiende a acortarse si el ciclo de producción no se ajusta en la misma proporción. El CV puede subir por sobre el 5 % aunque el mezclador sea exactamente el mismo modelo que ya cumplía el estándar a menor capacidad.
+
+¿Tu coeficiente de variación se sigue midiendo después de escalar la capacidad de la línea, o solo se validó una vez al inicio?

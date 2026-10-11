@@ -68,13 +68,13 @@ for i, p in enumerate(posts):
 <h1 style="margin:0 0 20px;font-weight:500;font-size:clamp(34px,5vw,60px);line-height:1.05;letter-spacing:-0.04em;text-wrap:balance">{e(p["title"])}</h1>
 <p class="mono" style="margin:0 0 40px;letter-spacing:1px;color:#6F6250"><time datetime="{p["date"]}">{fecha(p["date"])}</time> · Alberto Núñez</p>
 {paras}{q}
-<p style="margin:32px 0 0;font-size:14px;color:#6F6250">Fuente: {e(p["source"])}</p>
+{("<p style=\"margin:32px 0 0;font-size:14px;color:#6F6250\">Fuente: "+e(p["source"])+"</p>") if p.get("source") else ""}
 <div style="margin-top:48px"><a href="/#contacto" style="font-size:16px;font-weight:500;padding:16px 32px;background:#B8975A;color:#0A0A0A;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center">Conversemos</a></div>
 </article>
 <section style="padding:0 clamp(24px,5vw,64px) clamp(56px,7vw,96px);box-sizing:border-box"><div style="display:flex;flex-wrap:wrap;gap:1px;background:rgba(10,10,10,0.14);border:1px solid rgba(10,10,10,0.14)">{"".join(f'<div style="flex:1 1 320px;display:flex;flex-direction:column;background:#fff">{card(o)}</div>' for o in others)}</div></section>'''
     schema = ld({"@context":"https://schema.org","@graph":[
         {"@type":"Article","headline":p["title"],"datePublished":p["date"],"dateModified":p["date"],"inLanguage":"es-CL",
-         "author":AUTH,"publisher":ORG,"mainEntityOfPage":url,"image":SITE+"/img/og-image.png","about":p["tag"],"isBasedOn":p["source"]},
+         "author":AUTH,"publisher":ORG,"mainEntityOfPage":url,"image":SITE+"/img/og-image.png","about":p["tag"],**({"isBasedOn":p["source"]} if p.get("source") else {})},
         {"@type":"BreadcrumbList","itemListElement":[
          {"@type":"ListItem","position":1,"name":"Inicio","item":SITE+"/"},
          {"@type":"ListItem","position":2,"name":"Ideas","item":SITE+"/ideas/"},

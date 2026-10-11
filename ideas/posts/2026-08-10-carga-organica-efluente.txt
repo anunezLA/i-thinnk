@@ -1,0 +1,13 @@
+title: La carga orgánica de un efluente no crece en línea recta
+tag: Tratamiento de riles
+date: 2026-08-10
+---
+La carga orgánica de un efluente industrial no crece en línea recta con las toneladas producidas, y ese detalle rara vez está en el business case de una ampliación.
+
+Ampliar una planta de procesamiento de alimentos hasta su capacidad máxima autorizada, sumando digestor, tratamiento de riles y generación eléctrica propia, es un patrón de inversión frecuente en la industria de alimentos en Chile.
+
+La planta de tratamiento de riles se dimensiona para una carga orgánica y un caudal específicos, no solo para un volumen de agua. Cuando la producción sube, la carga orgánica por tonelada procesada también sube, y esa curva no siempre es lineal con el crecimiento de toneladas por año del proyecto.
+
+Lo que veo seguido en ampliaciones de este tipo: la ingeniería de proceso avanza primero, y la planta de riles se dimensiona con el presupuesto que queda, hasta que la carga orgánica real supera el diseño y el cuello de botella ambiental aparece recién cuando la planta opera a capacidad plena.
+
+¿Tu planta de tratamiento de riles se dimensionó para las toneladas de hoy, o para la carga orgánica de cuando llegues a capacidad plena?

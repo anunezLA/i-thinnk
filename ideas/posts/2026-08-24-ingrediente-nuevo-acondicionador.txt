@@ -1,0 +1,13 @@
+title: Un ingrediente nuevo cambia el acondicionador
+tag: Escalamiento industrial
+date: 2026-08-24
+---
+Un ingrediente nuevo que funciona en el piloto no garantiza el mismo pellet en planta industrial.
+
+Nuevas plantas piloto que transforman subproductos agroindustriales en ingredientes alternativos para nutrición animal están avanzando en la región, buscando escalar hacia producción industrial en los próximos años.
+
+El almidón de un grano tradicional necesita superar los 60 °C para gelatinizar y actuar como aglutinante natural del pellet. Un ingrediente alternativo tiene su propia curva de gelatinización o coagulación, que rara vez coincide con los parámetros de acondicionamiento ya calibrados para la fórmula anterior.
+
+Al escalar de una planta piloto a una línea industrial, el tiempo de retención en el acondicionador cambia: un aglutinante que gelatinizaba bien a baja escala puede quedar sub-acondicionado a caudal nominal, bajando el PDI aunque la fórmula en papel sea idéntica.
+
+¿Tu curva de acondicionamiento se revalida cada vez que cambia un ingrediente de la fórmula, o solo cuando cambia el equipo?

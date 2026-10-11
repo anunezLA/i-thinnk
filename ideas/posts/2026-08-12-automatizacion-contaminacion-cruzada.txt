@@ -1,0 +1,13 @@
+title: Más automatización no es menos riesgo de contaminación cruzada
+tag: Inocuidad alimentaria
+date: 2026-08-12
+---
+Automatizar el transporte y la limpieza entre líneas reduce el contacto humano con el producto, pero no elimina por sí solo la contaminación cruzada.
+
+Construir una planta nueva de molienda de granos con foco explícito en control de alérgenos es un proyecto de inversión que se repite en la industria de procesamiento de granos de la región.
+
+El riesgo real se controla con la validación de los protocolos de limpieza entre cambios de producto y con puntos de muestreo que confirmen que la línea quedó realmente limpia, no solo con que el equipo esté automatizado.
+
+Es común ver plantas nuevas donde se automatiza el transporte pensando que eso resuelve la trazabilidad de alérgenos, y recién en la puesta en marcha se descubre que faltó definir el punto de muestreo o el criterio de aceptación.
+
+¿Tu línea validó la limpieza entre cambios de producto, o solo instaló el equipo automatizado?

@@ -1,0 +1,7 @@
+title: Trazabilidad real: del lote, no solo del producto
+tag: Trazabilidad de lotes
+date: 2026-10-20
+---
+La trazabilidad que importa no es la del código de barras en el empaque, es la que conecta lote de materia prima, turno y parámetros de proceso.
+
+Sin esa conexión, trazabilidad es solo archivo para auditoría.

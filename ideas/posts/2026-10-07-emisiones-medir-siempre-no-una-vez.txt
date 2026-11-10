@@ -1,0 +1,7 @@
+title: Emisiones: medir siempre, no una vez al mes
+tag: Emisiones atmosféricas
+date: 2026-10-07
+---
+Un muestreo mensual de emisiones puede caer justo en el momento en que el proceso opera mejor, y dejar fuera los peaks reales.
+
+El monitoreo continuo no es solo cumplimiento más robusto, es detectar la desviación el mismo día.

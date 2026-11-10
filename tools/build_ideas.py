@@ -49,7 +49,7 @@ def card(p):
     return f'''<a class="card" href="/ideas/{p["slug"]}/" style="display:flex;flex-direction:column;gap:16px;padding:clamp(24px,2.6vw,36px);background:#fff;box-sizing:border-box;min-height:260px">
 <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#8A6E3E">{e(p["tag"])}</span>
 <h3 style="margin:0;font-size:clamp(20px,1.9vw,24px);font-weight:500;letter-spacing:-0.025em;line-height:1.2">{e(p["title"])}</h3>
-<p style="margin:0;font-size:16px;color:#4A4034;line-height:1.65">{e(p["paras"][1][:150].rsplit(" ",1)[0])}…</p>
+<p style="margin:0;font-size:16px;color:#4A4034;line-height:1.65">{e(p["paras"][min(1,len(p["paras"])-1)][:150].rsplit(" ",1)[0])}…</p>
 <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:12px;text-transform:uppercase;color:#6F6250;margin-top:auto;letter-spacing:1px">{fecha(p["date"])} →</span></a>'''
 
 ORG = {"@type":"Organization","@id":SITE+"/#org","name":"i+Thinnk®","url":SITE+"/"}
@@ -59,8 +59,9 @@ AUTH = {"@type":"Person","name":"Alberto Núñez Neumann"}
 for i, p in enumerate(posts):
     url = f'{SITE}/ideas/{p["slug"]}/'
     desc = p["paras"][0][:155].rsplit(" ", 1)[0] + "…"
-    paras = "".join(f'<p style="margin:0 0 24px;font-size:19px;line-height:1.7;color:#2a251d">{e(t)}</p>' for t in p["paras"][:-1])
-    q = f'<p style="margin:40px 0 0;padding:28px 0 0;border-top:1px solid #B8975A;font-size:clamp(22px,2.4vw,30px);font-weight:500;letter-spacing:-0.03em;line-height:1.25;text-wrap:balance">{e(p["paras"][-1])}</p>'
+    has_q = p["paras"][-1].rstrip().endswith("?")
+    paras = "".join(f'<p style="margin:0 0 24px;font-size:19px;line-height:1.7;color:#2a251d">{e(t)}</p>' for t in (p["paras"][:-1] if has_q else p["paras"]))
+    q = "" if not has_q else f'<p style="margin:40px 0 0;padding:28px 0 0;border-top:1px solid #B8975A;font-size:clamp(22px,2.4vw,30px);font-weight:500;letter-spacing:-0.03em;line-height:1.25;text-wrap:balance">{e(p["paras"][-1])}</p>'
     others = [o for o in posts if o is not p][:2]
     more = "".join(card(o) for o in others)
     body = f'''<article style="max-width:760px;margin:0 auto;padding:clamp(48px,7vw,96px) clamp(24px,5vw,64px) clamp(40px,5vw,72px);box-sizing:border-box">

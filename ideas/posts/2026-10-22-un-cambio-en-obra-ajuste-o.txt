@@ -1,0 +1,5 @@
+title: Un cambio en obra: ¿ajuste o sobrecosto?
+tag: Control de cambios
+date: 2026-10-22
+---
+La mayoría de los sobrecostos en proyectos industriales no vienen de un solo error grande, vienen de una cadena de cambios menores en terreno que nadie sumó a tiempo por falta de un control de cambios formal.

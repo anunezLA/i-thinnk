@@ -1,0 +1,7 @@
+title: Conectividad industrial: no todo sensor necesita WiFi
+tag: Conectividad industrial
+date: 2026-10-26
+---
+LoRaWAN no compite con WiFi, resuelve un problema distinto: sensores dispersos en un sitio grande, con batería de años, enviando poco dato pero el dato correcto (nivel de estanque, temperatura ambiental, estado de un activo remoto).
+
+La pregunta antes de elegir tecnología de conectividad es qué dato se necesita y con qué frecuencia.

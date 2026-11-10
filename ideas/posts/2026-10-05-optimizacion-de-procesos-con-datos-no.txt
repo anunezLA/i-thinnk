@@ -1,0 +1,7 @@
+title: Optimización de procesos con datos, no con intuición
+tag: Optimización de procesos
+date: 2026-10-05
+---
+Optimizar un proceso industrial no empieza por el algoritmo: empieza por tener una línea base confiable de las variables que realmente importan.
+
+La reducción de variabilidad suele valer más que perseguir el pico de rendimiento.

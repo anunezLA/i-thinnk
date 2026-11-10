@@ -1,0 +1,7 @@
+title: Medir antes de invertir: la auditoría energética
+tag: Eficiencia energética
+date: 2026-10-23
+---
+Antes de invertir en generación (solar, cogeneración) vale la pena auditar el consumo real por equipo.
+
+Financiar generación sobre una base de consumo ineficiente es resolver el problema equivocado primero.

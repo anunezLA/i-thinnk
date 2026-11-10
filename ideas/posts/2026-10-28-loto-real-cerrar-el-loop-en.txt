@@ -1,0 +1,7 @@
+title: LOTO real: cerrar el loop en válvulas manuales
+tag: Seguridad industrial
+date: 2026-10-28
+---
+LOTO es de los procedimientos más importantes para prevenir accidentes de mantenimiento, y de los más incumplidos en la práctica, justamente porque las válvulas manuales (la mayoría en cualquier planta) no tienen forma de verificar digitalmente su posición.
+
+Cerrar ese loop es ingeniería de seguridad, no un detalle administrativo.

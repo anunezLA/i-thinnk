@@ -1,0 +1,7 @@
+title: Humedad y poder calorífico: el trade-off del pellet
+tag: Pellet de biomasa
+date: 2026-10-08
+---
+En pellet de biomasa, la humedad no es un detalle de control de calidad, es el trade-off central: muy húmeda resta poder calorífico, muy seca resta cohesión en la densificación.
+
+El objetivo es el rango óptimo para ese material, no el extremo.

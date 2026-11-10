@@ -1,0 +1,7 @@
+title: Calidad en línea, no en el laboratorio
+tag: Calidad en línea
+date: 2026-10-15
+---
+La diferencia entre control de calidad y calidad en línea es el tiempo de reacción: un NIR midiendo en continuo detecta una desviación en minutos, no en el próximo muestreo de laboratorio.
+
+Menos lotes rechazados, más trazabilidad real.

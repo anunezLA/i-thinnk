@@ -1,0 +1,9 @@
+title: La falla que avisa antes: vibración y mantenimiento predictivo
+tag: Mantenimiento predictivo
+date: 2026-11-09
+---
+Un rodamiento que empieza a fallar no se rompe de un día para otro, cambia su firma de vibración semanas antes, mucho antes de que el problema se note en el sonido, la temperatura o el desgaste visible.
+
+Esa diferencia es la que separa el mantenimiento predictivo del preventivo clásico. El preventivo cambia piezas por calendario, estén sanas o no; el correctivo repara después de que la falla ya detuvo la línea. El predictivo usa la señal real del equipo para decidir cuándo intervenir, ni antes ni después. El problema en la mayoría de las plantas no es falta de interés, es falta de dato: sin un sensor de vibración en los equipos críticos, la única alarma temprana disponible sigue siendo que alguien note un ruido distinto durante una ronda, y para entonces, la ventana para programar la intervención sin parar producción ya se acortó.
+
+¿Tus equipos críticos tienen sensor de vibración, o dependen de que alguien note un ruido raro?

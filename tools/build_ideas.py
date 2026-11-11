@@ -48,6 +48,10 @@ def page(title, desc, url, body, extra=""):
 def ld(obj):
     import json; return '<script type="application/ld+json">'+json.dumps(obj, ensure_ascii=False)+'</script>\n'
 
+SHARE_JS = "<script>document.addEventListener('click',function(e){var b=e.target.closest('[data-share]');if(!b)return;var u=b.getAttribute('data-url'),t=b.getAttribute('data-title'),l=b.querySelector('span');function ok(){var o=l.textContent;l.textContent='Enlace copiado';setTimeout(function(){l.textContent=o},2000)}if(navigator.share){navigator.share({title:t,url:u}).catch(function(){})}else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(u).then(ok,function(){window.prompt('Copia el enlace:',u)})}else{window.prompt('Copia el enlace:',u)}})</script>"
+def share_btn(url, title):
+    return f'<button type="button" data-share data-url="{e(url)}" data-title="{e(title)}" aria-label="Compartir enlace" style="font:inherit;font-size:15px;font-weight:500;padding:12px 22px;background:transparent;color:#0A0A0A;border:1px solid #B8975A;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center;gap:10px;cursor:pointer"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg><span>Compartir</span></button>'
+
 def eyebrow(t):
     return f'<div style="display:flex;align-items:center;gap:14px;margin-bottom:24px"><span style="width:28px;height:1px;background:#B8975A;display:block"></span><span class="mono" style="color:#6F6250">{e(t)}</span></div>'
 
@@ -76,9 +80,9 @@ for i, p in enumerate(posts):
 <p class="mono" style="margin:0 0 40px;letter-spacing:1px;color:#6F6250"><time datetime="{p["date"]}">{fecha(p["date"])}</time> · Alberto Núñez</p>
 {paras}{q}
 {("<p style=\"margin:32px 0 0;font-size:14px;color:#6F6250\">Fuente: "+e(p["source"])+"</p>") if p.get("source") else ""}
-<div style="margin-top:48px"><a href="/#contacto" style="font-size:16px;font-weight:500;padding:16px 32px;background:#B8975A;color:#0A0A0A;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center">Conversemos</a></div>
+<div style="margin-top:48px;display:flex;gap:12px;flex-wrap:wrap"><a href="/#contacto" style="font-size:16px;font-weight:500;padding:16px 32px;background:#B8975A;color:#0A0A0A;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center">Conversemos</a>{share_btn(url, p["title"])}</div>
 </article>
-<section style="padding:0 clamp(24px,5vw,64px) clamp(56px,7vw,96px);box-sizing:border-box"><div style="display:flex;flex-wrap:wrap;gap:1px;background:rgba(10,10,10,0.14);border:1px solid rgba(10,10,10,0.14)">{"".join(f'<div style="flex:1 1 320px;display:flex;flex-direction:column;background:#fff">{card(o)}</div>' for o in others)}</div></section>'''
+<section style="padding:0 clamp(24px,5vw,64px) clamp(56px,7vw,96px);box-sizing:border-box"><div style="display:flex;flex-wrap:wrap;gap:1px;background:rgba(10,10,10,0.14);border:1px solid rgba(10,10,10,0.14)">{"".join(f'<div style="flex:1 1 320px;display:flex;flex-direction:column;background:#fff">{card(o)}</div>' for o in others)}</div></section>{SHARE_JS}'''
     schema = ld({"@context":"https://schema.org","@graph":[
         {"@type":"Article","headline":p["title"],"datePublished":p["date"],"dateModified":p["date"],"inLanguage":"es-CL",
          "author":AUTH,"publisher":ORG,"mainEntityOfPage":url,"image":SITE+"/img/og-image.png","about":p["tag"],**({"isBasedOn":p["source"]} if p.get("source") else {})},
@@ -126,16 +130,16 @@ import json
 vf = ROOT/"en-accion/videos.json"
 vids = sorted(json.loads(vf.read_text(encoding="utf-8")), key=lambda v: v["date"], reverse=True) if vf.exists() else []
 if vids:
-    cards = "".join(f'''<div style="flex:1 1 440px;display:flex;flex-direction:column;background:#fff;padding:clamp(20px,2.4vw,32px);box-sizing:border-box;gap:16px">
+    cards = "".join(f'''<div id="{e(v["file"].rsplit(".",1)[0])}" style="flex:1 1 440px;display:flex;flex-direction:column;background:#fff;padding:clamp(20px,2.4vw,32px);box-sizing:border-box;gap:16px;scroll-margin-top:24px">
 <video controls preload="none" playsinline poster="/en-accion/posters/{e(v["poster"])}" style="width:100%;aspect-ratio:16/9;background:#0A0A0A;display:block"><source src="/en-accion/videos/{e(v["file"])}" type="video/mp4"></video>
 <span class="mono" style="color:#8A6E3E">{e(v["tag"])}</span>
 <h2 style="margin:0;font-size:clamp(22px,2.2vw,28px);font-weight:500;letter-spacing:-0.025em;line-height:1.2">{e(v["title"])}</h2>
-<span class="mono" style="letter-spacing:1px;color:#6F6250">{fecha(v["date"])}</span></div>''' for v in vids)
+<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap"><span class="mono" style="letter-spacing:1px;color:#6F6250">{fecha(v["date"])}</span>{share_btn(SITE+"/en-accion/#"+v["file"].rsplit(".",1)[0], v["title"]+" | i+Thinnk®")}</div></div>''' for v in vids)
     body = f'''<section style="padding:clamp(48px,7vw,96px) clamp(24px,5vw,64px);box-sizing:border-box">
 {eyebrow("En acción · Campañas de i+Thinnk®")}
 <h1 style="margin:0 0 20px;font-weight:500;font-size:clamp(38px,6vw,84px);line-height:1;letter-spacing:-0.045em;text-wrap:balance">Tecnología <span style="color:#8A6E3E">en acción.</span></h1>
 <p style="margin:0 0 56px;font-size:18px;color:#4A4034;max-width:560px">Las campañas de i+Thinnk® en video.</p>
-<div style="display:flex;flex-wrap:wrap;gap:1px;background:rgba(10,10,10,0.14);border:1px solid rgba(10,10,10,0.14)">{cards}</div></section>{ONE_VIDEO}'''
+<div style="display:flex;flex-wrap:wrap;gap:1px;background:rgba(10,10,10,0.14);border:1px solid rgba(10,10,10,0.14)">{cards}</div></section>{ONE_VIDEO}{SHARE_JS}'''
     vschema = ld({"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":"En acción | i+Thinnk®","url":SITE+"/en-accion/","inLanguage":"es-CL","publisher":ORG}]+[
         {"@type":"VideoObject","name":v["title"],"description":v["title"]+" · "+v["tag"]+" · i+Thinnk®","thumbnailUrl":SITE+"/en-accion/posters/"+v["poster"],
          "uploadDate":v["date"],"contentUrl":SITE+"/en-accion/videos/"+v["file"],"duration":v["duration"],"publisher":ORG} for v in vids]})
@@ -145,7 +149,7 @@ if vids:
 <video controls preload="none" playsinline poster="/en-accion/posters/{e(v["poster"])}" style="width:100%;aspect-ratio:16/9;background:#0A0A0A;display:block"><source src="/en-accion/videos/{e(v["file"])}" type="video/mp4"></video>
 <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#8A6E3E">{e(v["tag"])}</span>
 <h3 style="margin:0;font-size:clamp(20px,1.9vw,24px);font-weight:500;letter-spacing:-0.025em;line-height:1.2">{e(v["title"])}</h3>
-<span style="font-family:'DM Mono',ui-monospace,monospace;font-size:12px;text-transform:uppercase;color:#6F6250;letter-spacing:1px">{fecha(v["date"])}</span></div>''' for v in vids[:2])
+<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap"><span style="font-family:'DM Mono',ui-monospace,monospace;font-size:12px;text-transform:uppercase;color:#6F6250;letter-spacing:1px">{fecha(v["date"])}</span>{share_btn(SITE+"/en-accion/#"+v["file"].rsplit(".",1)[0], v["title"]+" | i+Thinnk®")}</div></div>''' for v in vids[:2])
     ablock = f'''<!--ACCION_START-->
 <div id="en-accion" style="padding: 0 clamp(24px, 5vw, 64px) clamp(64px, 9vw, 120px); box-sizing: border-box">
 <h2 style="margin: 0 0 32px; font: inherit; display: flex; align-items: center; gap: 14px">
@@ -158,7 +162,7 @@ if vids:
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 1px; background: rgba(10,10,10,0.14); border: 1px solid rgba(10,10,10,0.14)">{acards}</div>
 </div>
-{ONE_VIDEO}
+{ONE_VIDEO}{SHARE_JS}
 <!--ACCION_END-->'''
     h2 = (ROOT/"index.html").read_text(encoding="utf-8")
     if "<!--ACCION_START-->" in h2:

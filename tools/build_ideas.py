@@ -131,7 +131,7 @@ vf = ROOT/"en-accion/videos.json"
 vids = sorted(json.loads(vf.read_text(encoding="utf-8")), key=lambda v: v["date"], reverse=True) if vf.exists() else []
 if vids:
     cards = "".join(f'''<div id="{e(v["file"].rsplit(".",1)[0])}" style="flex:1 1 440px;display:flex;flex-direction:column;background:#fff;padding:clamp(20px,2.4vw,32px);box-sizing:border-box;gap:16px;scroll-margin-top:24px">
-<video controls preload="none" playsinline poster="/en-accion/posters/{e(v["poster"])}" style="width:100%;aspect-ratio:16/9;background:#0A0A0A;display:block"><source src="/en-accion/videos/{e(v["file"])}" type="video/mp4"></video>
+<video controls controlsList="nodownload" disablePictureInPicture oncontextmenu="return false" preload="none" playsinline poster="/en-accion/posters/{e(v["poster"])}" style="width:100%;aspect-ratio:16/9;background:#0A0A0A;display:block"><source src="/en-accion/videos/{e(v["file"])}" type="video/mp4"></video>
 <span class="mono" style="color:#8A6E3E">{e(v["tag"])}</span>
 <h2 style="margin:0;font-size:clamp(22px,2.2vw,28px);font-weight:500;letter-spacing:-0.025em;line-height:1.2">{e(v["title"])}</h2>
 <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap"><span class="mono" style="letter-spacing:1px;color:#6F6250">{fecha(v["date"])}</span>{share_btn(SITE+"/en-accion/#"+v["file"].rsplit(".",1)[0], v["title"]+" | i+Thinnk®")}</div></div>''' for v in vids)
@@ -146,7 +146,7 @@ if vids:
     (ROOT/"en-accion/index.html").write_text(page("En acción: campañas en video | i+Thinnk®","Las campañas de i+Thinnk® en video: tecnología para plantas industriales.",SITE+"/en-accion/",body,vschema).replace('og:type" content="article"','og:type" content="website"'), encoding="utf-8")
     # bloque "En acción" en la home, justo después del bloque Ideas
     acards = "".join(f'''<div style="flex:1 1 440px;display:flex;flex-direction:column;background:#fff;padding:clamp(20px,2.4vw,32px);box-sizing:border-box;gap:16px">
-<video controls preload="none" playsinline poster="/en-accion/posters/{e(v["poster"])}" style="width:100%;aspect-ratio:16/9;background:#0A0A0A;display:block"><source src="/en-accion/videos/{e(v["file"])}" type="video/mp4"></video>
+<video controls controlsList="nodownload" disablePictureInPicture oncontextmenu="return false" preload="none" playsinline poster="/en-accion/posters/{e(v["poster"])}" style="width:100%;aspect-ratio:16/9;background:#0A0A0A;display:block"><source src="/en-accion/videos/{e(v["file"])}" type="video/mp4"></video>
 <span style="font-family:'DM Mono',ui-monospace,monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#8A6E3E">{e(v["tag"])}</span>
 <h3 style="margin:0;font-size:clamp(20px,1.9vw,24px);font-weight:500;letter-spacing:-0.025em;line-height:1.2">{e(v["title"])}</h3>
 <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap"><span style="font-family:'DM Mono',ui-monospace,monospace;font-size:12px;text-transform:uppercase;color:#6F6250;letter-spacing:1px">{fecha(v["date"])}</span>{share_btn(SITE+"/en-accion/#"+v["file"].rsplit(".",1)[0], v["title"]+" | i+Thinnk®")}</div></div>''' for v in vids[:2])

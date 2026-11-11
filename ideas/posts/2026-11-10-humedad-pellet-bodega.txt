@@ -1,0 +1,11 @@
+title: La humedad que decide si el alimento aguanta la bodega
+tag: Humedad del pellet
+date: 2026-11-10
+---
+Un alimento balanceado puede salir de la matriz dentro de especificación y seguir siendo un problema de calidad en bodega semanas después.
+
+La humedad del pellet recién salido de la matriz no es la que importa para almacenamiento: lo que importa es la humedad de equilibrio que alcanza frente al ambiente de la bodega. Si el enfriador no retira suficiente calor y humedad, el pellet llega aparentemente seco por fuera pero caliente y húmedo por dentro, y sigue intercambiando agua con el aire durante semanas.
+
+Un error que se repite: medir humedad solo a la salida de la matriz, antes del enfriador, y asumir que ese número describe el producto que realmente llega a bodega. La diferencia entre ambos puntos de medición es exactamente donde empieza el riesgo de apelmazamiento y desarrollo de hongos.
+
+¿Mides la humedad del pellet después del enfriador, o solo a la salida de la matriz?

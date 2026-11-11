@@ -1,0 +1,11 @@
+title: Edge computing industrial: decidir en planta, no esperar a la nube
+tag: Edge computing industrial
+date: 2026-11-11
+---
+Una válvula de seguridad o un lazo de control que depende de una decisión tomada en la nube hereda, sin que nadie lo haya decidido explícitamente, la latencia de esa conexión, y en un proceso continuo, esos milisegundos pueden ser la diferencia entre una corrección a tiempo y una parada no programada.
+
+El edge computing industrial resuelve esto moviendo el análisis y la decisión a donde realmente ocurre el dato: cerca del sensor, del PLC o del controlador de planta. Solo lo que necesita agregación histórica o un modelo más pesado se envía hacia arriba, hacia la nube o el servidor central.
+
+Esto no significa que la nube deje de ser útil: sigue siendo el lugar correcto para dashboards, reportes y modelos de IA entrenados con datos históricos. Lo que no debería depender de ella es la decisión de control en tiempo real que tiene que tomarse aunque la conexión a internet esté caída en ese instante.
+
+¿Qué decisiones de tu planta dependen hoy de una conexión a internet que no debería ser crítica?

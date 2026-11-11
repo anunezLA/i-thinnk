@@ -20,6 +20,12 @@ for f in sorted((ROOT/"ideas/posts").glob("*.txt")):
     meta["paras"] = [p.strip() for p in body.strip().split("\n\n") if p.strip()]
     posts.append(meta)
 posts.sort(key=lambda p: p["date"], reverse=True)
+# Solo se muestran en la web los últimos MAX_VISIBLE posts (una semana de LinkedIn).
+# Los .txt antiguos se conservan en ideas/posts/, pero se quitan sus páginas.
+MAX_VISIBLE = 5
+for old in posts[MAX_VISIBLE:]:
+    shutil.rmtree(ROOT/"ideas"/old["slug"], ignore_errors=True)
+posts = posts[:MAX_VISIBLE]
 
 FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=DM+Mono:wght@400&display=swap" rel="stylesheet">'
 CSS = "body{margin:0;background:#fff;font-family:'DM Sans',system-ui,sans-serif;color:#0A0A0A;line-height:1.6;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}a:hover{opacity:.7}.mono{font-family:'DM Mono',ui-monospace,monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase}.card{transition:background .3s ease}.card:hover{background:#F8F6F1}"

@@ -2,7 +2,7 @@ name: Generar sección Ideas
 on:
   push:
     branches: [main]
-    paths: ['ideas/posts/**', 'tools/build_ideas.py']
+    paths: ['ideas/posts/**', 'tools/build_ideas.py', 'en-accion/videos.json']
 permissions:
   contents: write
 jobs:

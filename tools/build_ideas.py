@@ -29,7 +29,7 @@ posts = posts[:MAX_VISIBLE]
 
 FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=DM+Mono:wght@400&display=swap" rel="stylesheet">'
 CSS = "body{margin:0;background:#fff;font-family:'DM Sans',system-ui,sans-serif;color:#0A0A0A;line-height:1.6;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}a:hover{opacity:.7}.mono{font-family:'DM Mono',ui-monospace,monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase}.card{transition:background .3s ease}.card:hover{background:#F8F6F1}"
-NAV = '<div style="background:#0A0A0A;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:24px clamp(24px,5vw,64px);box-sizing:border-box"><a href="/" style="font-weight:700;font-size:22px;letter-spacing:3px;word-spacing:-2px">i+Thinnk®</a><a href="/ideas/" style="font-size:15px;font-weight:500;padding:12px 22px;border:1px solid #B8975A;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center">Ideas</a></div>'
+NAV = '<div style="background:#0A0A0A;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:24px clamp(24px,5vw,64px);box-sizing:border-box"><a href="/" style="font-weight:700;font-size:22px;letter-spacing:3px;word-spacing:-2px">i+Thinnk®</a><div style="display:flex;gap:12px;flex-wrap:wrap"><a href="/en-accion/" style="font-size:15px;font-weight:500;padding:12px 22px;border:1px solid #B8975A;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center">En acción</a><a href="/ideas/" style="font-size:15px;font-weight:500;padding:12px 22px;border:1px solid #B8975A;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center">Ideas</a></div></div>'
 FOOT = '<footer style="background:#0A0A0A;padding:24px clamp(24px,5vw,64px) 32px;box-sizing:border-box;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px"><span class="mono" style="letter-spacing:1px;color:#A89376">© 2026 i+Thinnk® · Los Ángeles, Biobío, Chile</span><a href="/" class="mono" style="letter-spacing:1px;color:#A89376">Volver al inicio</a></footer>'
 
 def page(title, desc, url, body, extra=""):
@@ -120,8 +120,28 @@ else:
     home = home.replace("<!-- PARTNERS -->", block + "\n\n<!-- PARTNERS -->", 1)
 (ROOT/"index.html").write_text(home, encoding="utf-8")
 
+# sección /en-accion/ (videos de campañas), desde en-accion/videos.json
+import json
+vf = ROOT/"en-accion/videos.json"
+vids = sorted(json.loads(vf.read_text(encoding="utf-8")), key=lambda v: v["date"], reverse=True) if vf.exists() else []
+if vids:
+    cards = "".join(f'''<div style="flex:1 1 440px;display:flex;flex-direction:column;background:#fff;padding:clamp(20px,2.4vw,32px);box-sizing:border-box;gap:16px">
+<video controls preload="none" playsinline poster="/en-accion/posters/{e(v["poster"])}" style="width:100%;aspect-ratio:16/9;background:#0A0A0A;display:block"><source src="/en-accion/videos/{e(v["file"])}" type="video/mp4"></video>
+<span class="mono" style="color:#8A6E3E">{e(v["tag"])}</span>
+<h2 style="margin:0;font-size:clamp(22px,2.2vw,28px);font-weight:500;letter-spacing:-0.025em;line-height:1.2">{e(v["title"])}</h2>
+<span class="mono" style="letter-spacing:1px;color:#6F6250">{fecha(v["date"])}</span></div>''' for v in vids)
+    body = f'''<section style="padding:clamp(48px,7vw,96px) clamp(24px,5vw,64px);box-sizing:border-box">
+{eyebrow("En acción · Campañas de i+Thinnk®")}
+<h1 style="margin:0 0 20px;font-weight:500;font-size:clamp(38px,6vw,84px);line-height:1;letter-spacing:-0.045em;text-wrap:balance">Tecnología <span style="color:#8A6E3E">en acción.</span></h1>
+<p style="margin:0 0 56px;font-size:18px;color:#4A4034;max-width:560px">Las campañas de i+Thinnk® en video.</p>
+<div style="display:flex;flex-wrap:wrap;gap:1px;background:rgba(10,10,10,0.14);border:1px solid rgba(10,10,10,0.14)">{cards}</div></section>'''
+    vschema = ld({"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":"En acción | i+Thinnk®","url":SITE+"/en-accion/","inLanguage":"es-CL","publisher":ORG}]+[
+        {"@type":"VideoObject","name":v["title"],"description":v["title"]+" · "+v["tag"]+" · i+Thinnk®","thumbnailUrl":SITE+"/en-accion/posters/"+v["poster"],
+         "uploadDate":v["date"],"contentUrl":SITE+"/en-accion/videos/"+v["file"],"duration":v["duration"],"publisher":ORG} for v in vids]})
+    (ROOT/"en-accion/index.html").write_text(page("En acción: campañas en video | i+Thinnk®","Las campañas de i+Thinnk® en video: tecnología para plantas industriales.",SITE+"/en-accion/",body,vschema).replace('og:type" content="article"','og:type" content="website"'), encoding="utf-8")
+
 # sitemap
-urls = [(SITE+"/", __import__("datetime").date.today().isoformat(), "1.0"), (SITE+"/ideas/", posts[0]["date"], "0.8")] + [(f'{SITE}/ideas/{p["slug"]}/', p["date"], "0.6") for p in posts]
+urls = [(SITE+"/", __import__("datetime").date.today().isoformat(), "1.0"), (SITE+"/ideas/", posts[0]["date"], "0.8")] + [(f'{SITE}/ideas/{p["slug"]}/', p["date"], "0.6") for p in posts] + ([(SITE+"/en-accion/", vids[0]["date"], "0.7")] if vids else [])
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(f"  <url>\n    <loc>{u}</loc>\n    <lastmod>{d}</lastmod>\n    <priority>{pr}</priority>\n  </url>\n" for u,d,pr in urls) + "</urlset>\n"
 (ROOT/"sitemap.xml").write_text(sm, encoding="utf-8")
 print("posts:", len(posts))

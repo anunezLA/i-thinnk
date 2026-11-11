@@ -120,6 +120,7 @@ else:
     home = home.replace("<!-- PARTNERS -->", block + "\n\n<!-- PARTNERS -->", 1)
 (ROOT/"index.html").write_text(home, encoding="utf-8")
 
+ONE_VIDEO = "<script>document.addEventListener('play',function(e){document.querySelectorAll('video').forEach(function(v){if(v!==e.target)v.pause()})},true)</script>"
 # sección /en-accion/ (videos de campañas), desde en-accion/videos.json
 import json
 vf = ROOT/"en-accion/videos.json"
@@ -134,7 +135,7 @@ if vids:
 {eyebrow("En acción · Campañas de i+Thinnk®")}
 <h1 style="margin:0 0 20px;font-weight:500;font-size:clamp(38px,6vw,84px);line-height:1;letter-spacing:-0.045em;text-wrap:balance">Tecnología <span style="color:#8A6E3E">en acción.</span></h1>
 <p style="margin:0 0 56px;font-size:18px;color:#4A4034;max-width:560px">Las campañas de i+Thinnk® en video.</p>
-<div style="display:flex;flex-wrap:wrap;gap:1px;background:rgba(10,10,10,0.14);border:1px solid rgba(10,10,10,0.14)">{cards}</div></section>'''
+<div style="display:flex;flex-wrap:wrap;gap:1px;background:rgba(10,10,10,0.14);border:1px solid rgba(10,10,10,0.14)">{cards}</div></section>{ONE_VIDEO}'''
     vschema = ld({"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":"En acción | i+Thinnk®","url":SITE+"/en-accion/","inLanguage":"es-CL","publisher":ORG}]+[
         {"@type":"VideoObject","name":v["title"],"description":v["title"]+" · "+v["tag"]+" · i+Thinnk®","thumbnailUrl":SITE+"/en-accion/posters/"+v["poster"],
          "uploadDate":v["date"],"contentUrl":SITE+"/en-accion/videos/"+v["file"],"duration":v["duration"],"publisher":ORG} for v in vids]})
@@ -157,6 +158,7 @@ if vids:
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 1px; background: rgba(10,10,10,0.14); border: 1px solid rgba(10,10,10,0.14)">{acards}</div>
 </div>
+{ONE_VIDEO}
 <!--ACCION_END-->'''
     h2 = (ROOT/"index.html").read_text(encoding="utf-8")
     if "<!--ACCION_START-->" in h2:

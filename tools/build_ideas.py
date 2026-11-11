@@ -139,6 +139,31 @@ if vids:
         {"@type":"VideoObject","name":v["title"],"description":v["title"]+" · "+v["tag"]+" · i+Thinnk®","thumbnailUrl":SITE+"/en-accion/posters/"+v["poster"],
          "uploadDate":v["date"],"contentUrl":SITE+"/en-accion/videos/"+v["file"],"duration":v["duration"],"publisher":ORG} for v in vids]})
     (ROOT/"en-accion/index.html").write_text(page("En acción: campañas en video | i+Thinnk®","Las campañas de i+Thinnk® en video: tecnología para plantas industriales.",SITE+"/en-accion/",body,vschema).replace('og:type" content="article"','og:type" content="website"'), encoding="utf-8")
+    # bloque "En acción" en la home, justo después del bloque Ideas
+    acards = "".join(f'''<div style="flex:1 1 300px;display:flex;flex-direction:column;background:#fff"><a class="card" href="/en-accion/" style="display:flex;flex-direction:column;gap:16px;padding:clamp(24px,2.6vw,36px);background:#fff;box-sizing:border-box">
+<div style="position:relative"><img src="/en-accion/posters/{e(v["poster"])}" alt="{e(v["title"])}" loading="lazy" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#0A0A0A"><span aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgba(10,10,10,0.72);display:flex;align-items:center;justify-content:center"><span style="border-left:20px solid #fff;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px"></span></span></div>
+<span style="font-family:'DM Mono',ui-monospace,monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#8A6E3E">{e(v["tag"])}</span>
+<h3 style="margin:0;font-size:clamp(20px,1.9vw,24px);font-weight:500;letter-spacing:-0.025em;line-height:1.2">{e(v["title"])}</h3>
+<span style="font-family:'DM Mono',ui-monospace,monospace;font-size:12px;text-transform:uppercase;color:#6F6250;letter-spacing:1px">{fecha(v["date"])} →</span></a></div>''' for v in vids[:3])
+    ablock = f'''<!--ACCION_START-->
+<div id="en-accion" style="padding: 0 clamp(24px, 5vw, 64px) clamp(64px, 9vw, 120px); box-sizing: border-box">
+<h2 style="margin: 0 0 32px; font: inherit; display: flex; align-items: center; gap: 14px">
+<span style="width: 28px; height: 1px; background: #B8975A; display: block"></span>
+<span style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #6F6250">En acción</span>
+</h2>
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 48px; margin-bottom: clamp(32px, 4vw, 56px)">
+<p style="margin: 0; font-weight: 500; font-size: clamp(30px, 4vw, 56px); line-height: 1.05; letter-spacing: -0.04em; text-wrap: balance">Tecnología <span style="color: #8A6E3E">en acción.</span></p>
+<a href="/en-accion/" style="font-family: 'DM Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #8A6E3E">Ver todas →</a>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 1px; background: rgba(10,10,10,0.14); border: 1px solid rgba(10,10,10,0.14)">{acards}</div>
+</div>
+<!--ACCION_END-->'''
+    h2 = (ROOT/"index.html").read_text(encoding="utf-8")
+    if "<!--ACCION_START-->" in h2:
+        h2 = re.sub(r"<!--ACCION_START-->.*?<!--ACCION_END-->", lambda m: ablock, h2, flags=re.S)
+    else:
+        h2 = h2.replace("<!--IDEAS_END-->", "<!--IDEAS_END-->\n" + ablock, 1)
+    (ROOT/"index.html").write_text(h2, encoding="utf-8")
 
 # sitemap
 urls = [(SITE+"/", __import__("datetime").date.today().isoformat(), "1.0"), (SITE+"/ideas/", posts[0]["date"], "0.8")] + [(f'{SITE}/ideas/{p["slug"]}/', p["date"], "0.6") for p in posts] + ([(SITE+"/en-accion/", vids[0]["date"], "0.7")] if vids else [])

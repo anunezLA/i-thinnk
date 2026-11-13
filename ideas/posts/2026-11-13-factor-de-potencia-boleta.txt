@@ -1,0 +1,11 @@
+title: El costo que no se ve en la boleta: factor de potencia
+tag: Eficiencia energética
+date: 2026-11-13
+---
+La mayoría de las revisiones de consumo eléctrico en planta se enfocan en los kWh totales de la boleta, y se saltan por completo el cargo por factor de potencia, que puede estar sumando un costo mensual real sin aportar nada a la producción.
+
+Los motores y equipos inductivos de una planta consumen energía reactiva además de la activa. La reactiva no mueve nada, pero sí ocupa capacidad de la red eléctrica, y cuando el factor de potencia cae bajo el mínimo del pliego tarifario, la distribuidora cobra un recargo específico por eso.
+
+Ese recargo aparece como un ítem aparte en la boleta, fácil de pasar por alto si nadie lo revisa explícitamente contra el consumo total. Corregirlo con bancos de condensadores suele ser una de las inversiones de menor plazo de retorno en eficiencia energética industrial, precisamente porque elimina un costo que la planta ya paga sin ningún beneficio operativo a cambio.
+
+¿Has revisado el factor de potencia en tu boleta eléctrica, o solo el consumo total en kWh?

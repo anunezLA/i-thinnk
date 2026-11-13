@@ -1,0 +1,11 @@
+title: Las horas que se pierden en la interfaz entre contratistas
+tag: Gestión de proyectos
+date: 2026-11-12
+---
+La mayoría de los atrasos en proyectos industriales con múltiples contratistas no vienen de que un contratista se atrase en su propio trabajo: vienen de la interfaz entre el final de un paquete y el inicio del siguiente, que nadie es formalmente responsable de gestionar.
+
+Un cronograma bien hecho asigna fechas y responsables a cada actividad, pero rara vez asigna un responsable explícito a la transición entre actividades de distintos contratistas. El resultado es una sucesión de esperas de dos o tres días aquí y allá, que individualmente parecen insignificantes pero que en conjunto explican gran parte del atraso final del proyecto.
+
+La gestión de interfaces resuelve esto definiendo con anticipación quién entrega qué a quién, con qué calidad y en qué fecha, convirtiendo una cadena de esperas invisibles en una secuencia de hitos que sí se pueden medir, anticipar y escalar a tiempo si algo se atrasa.
+
+¿Tu cronograma asigna responsable a las interfaces entre contratistas, o solo a las actividades de cada uno?

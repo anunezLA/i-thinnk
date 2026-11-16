@@ -1,0 +1,11 @@
+title: El dato que existe pero nadie puede ver completo
+tag: Integración PLC SCADA ERP
+date: 2026-11-16
+---
+El PLC de una línea sabe exactamente cuánto produjo. El SCADA sabe cuándo paró y por qué. El ERP sabe qué se facturó ese turno. Y casi nunca los tres cuentan exactamente la misma historia, porque nadie los conectó entre sí.
+
+El problema no suele ser falta de dato (las plantas hoy miden más que nunca). El problema es que ese dato vive en tres sistemas aislados que hablan lenguajes distintos, y la única forma de verlos juntos es que alguien exporte planillas de cada uno y las cruce a mano.
+
+Esa integración manual no solo es lenta: llega días después de que el problema ya ocurrió, cuando el dato en tiempo real ya no sirve para decidir nada sobre ese turno. Integrar PLC, SCADA y ERP no es agregar más sensores: es construir la capa que ya debería existir para que esos tres sistemas cuenten la misma historia al mismo tiempo.
+
+¿Tus sistemas de planta y de gestión hablan entre sí, o alguien los cruza a mano en Excel?

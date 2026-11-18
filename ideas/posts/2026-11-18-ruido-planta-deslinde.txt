@@ -1,0 +1,11 @@
+title: El ruido que cumple en planta y no cumple en el deslinde
+tag: Ruido Industrial Cumplimiento
+date: 2026-11-18
+---
+Un compresor o un extractor puede estar perfectamente dentro de norma medido junto a la máquina, y esa misma fuente, propagada hasta el límite predial del vecino, superar el nivel permitido para ese horario y esa zona.
+
+La normativa de ruido industrial no se evalúa en la fuente, se evalúa en el receptor: el límite predial, la vivienda más cercana, el punto normado según el instrumento aplicable. Medir junto al equipo dice algo sobre el equipo, pero no dice nada por sí solo sobre el cumplimiento normativo real.
+
+Lo que determina cuánto ruido llega al receptor no es solo la potencia sonora de la fuente, es la distancia, la topografía, las barreras naturales o construidas, incluso la reflexión en otras estructuras de la planta. Dos instalaciones con el mismo equipo pueden tener resultados de cumplimiento completamente distintos según ese contexto.
+
+¿Tu última medición de ruido se hizo en el límite predial o receptor normado, o solo junto al equipo?

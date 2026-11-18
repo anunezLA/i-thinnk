@@ -1,0 +1,11 @@
+title: Mezcla pareja en el mezclador, segregada en el silo
+tag: Homogeneidad Mezcla Silo
+date: 2026-11-17
+---
+Un lote de alimento balanceado puede salir del mezclador perfectamente homogéneo y llegar segregado al silo: el problema no está en la fórmula, está en todo lo que pasa entre el mezclador y el punto de consumo.
+
+Durante el transporte neumático y en cada caída libre hacia un silo, las partículas se comportan distinto según su tamaño y densidad. Las más finas tienden a desplazarse y acumularse distinto que las gruesas, y el resultado es una segregación por capas o conos dentro del mismo silo que nadie planificó.
+
+La consecuencia real es que el animal no come la fórmula promedio que aparece en la ficha técnica, come lo que efectivamente le tocó de esa zona específica del silo. Si un micro-ingrediente crítico quedó concentrado en una parte, unos animales reciben de más y otros de menos, aunque la mezcla original haya sido perfecta.
+
+¿Verificas homogeneidad solo a la salida del mezclador, o también después del transporte hacia el silo?

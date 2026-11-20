@@ -1,0 +1,11 @@
+title: 90% de avance físico no es 90% del plazo
+tag: Gestión de Proyectos
+date: 2026-11-19
+---
+Un proyecto industrial que reporta 90% de avance físico puede estar perfectamente a tiempo, o puede estar seriamente atrasado: ese número por sí solo no dice nada sobre el plazo si no se compara contra la curva S planificada original.
+
+El avance físico mide cuánto trabajo se completó. El avance de plazo mide cuánto tiempo del cronograma ya transcurrió. Son dos curvas distintas, y casi nunca avanzan a la misma velocidad: el último tramo de un proyecto (pruebas, puesta en marcha, ajustes finos, cierre documental) suele tomar proporcionalmente más tiempo del que su peso físico en la curva S sugiere.
+
+Reportar solo el porcentaje físico, sin la curva S de referencia al lado, es el error que más esconde atrasos reales hasta que ya es tarde para corregirlos sin impacto en el plazo final.
+
+¿Tu reporte de avance compara el % físico real contra la curva S planificada, o solo informa un número aislado?

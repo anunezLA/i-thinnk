@@ -1,0 +1,11 @@
+title: El aire comprimido que se escapa y nadie escucha
+tag: Eficiencia Energética
+date: 2026-11-20
+---
+El aire comprimido es una de las formas de energía más caras de producir en cualquier planta, y es común que entre el 20% y el 30% de lo que se genera se pierda directamente en fugas, sin ningún beneficio operativo a cambio.
+
+El problema es que la mayoría de esas fugas no se oyen. Ocurren en frecuencias que se confunden con el ruido de fondo normal de una planta industrial, así que la detección "a oído" solo encuentra las fugas más grandes y obvias, dejando pasar docenas de fugas pequeñas que en conjunto representan el verdadero costo.
+
+Un detector ultrasónico encuentra estas fugas de forma sistemática, incluso en ambientes ruidosos, y permite priorizar reparaciones por impacto real en el consumo. Es una de las intervenciones de eficiencia energética con mejor retorno, precisamente porque no requiere cambiar ningún equipo: solo dejar de pagar por aire que nunca llegó a producir nada.
+
+¿Tu planta tiene un programa de detección ultrasónica de fugas de aire comprimido, o solo se repara lo que alguien escucha por casualidad?

@@ -21,10 +21,10 @@ for f in sorted((ROOT/"ideas/posts").glob("*.txt")):
     posts.append(meta)
 posts.sort(key=lambda p: p["date"], reverse=True)
 # Solo se muestran en la web los últimos MAX_VISIBLE posts (una semana de LinkedIn).
-# Los .txt antiguos se conservan en ideas/posts/, pero se quitan sus páginas.
+# Los posts antiguos salen de los listados, del home y del sitemap, pero su página
+# sigue existiendo (con noindex): así los enlaces compartidos no dan 404.
 MAX_VISIBLE = 5
-for old in posts[MAX_VISIBLE:]:
-    shutil.rmtree(ROOT/"ideas"/old["slug"], ignore_errors=True)
+all_posts = posts
 posts = posts[:MAX_VISIBLE]
 
 FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=DM+Mono:wght@400&display=swap" rel="stylesheet">'
@@ -32,12 +32,12 @@ CSS = "body{margin:0;background:#fff;font-family:'DM Sans',system-ui,sans-serif;
 NAV = '<div style="background:#0A0A0A;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:24px clamp(24px,5vw,64px);box-sizing:border-box"><a href="/" style="font-weight:700;font-size:22px;letter-spacing:3px;word-spacing:-2px">i+Thinnk®</a><div style="display:flex;gap:12px;flex-wrap:wrap"><a href="/en-accion/" style="font-size:15px;font-weight:500;padding:12px 22px;border:1px solid #B8975A;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center">En acción</a><a href="/ideas/" style="font-size:15px;font-weight:500;padding:12px 22px;border:1px solid #B8975A;min-height:44px;box-sizing:border-box;display:inline-flex;align-items:center">Ideas</a></div></div>'
 FOOT = '<footer style="background:#0A0A0A;padding:24px clamp(24px,5vw,64px) 32px;box-sizing:border-box;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px"><span class="mono" style="letter-spacing:1px;color:#A89376">© 2026 i+Thinnk® · Los Ángeles, Biobío, Chile</span><a href="/" class="mono" style="letter-spacing:1px;color:#A89376">Volver al inicio</a></footer>'
 
-def page(title, desc, url, body, extra=""):
+def page(title, desc, url, body, extra="", robots="index, follow"):
     return f'''<!doctype html>
 <html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{e(title)}</title>
 <meta name="description" content="{e(desc)}">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="{robots}">
 <link rel="canonical" href="{url}">
 <link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:url" content="{url}">
@@ -66,7 +66,8 @@ ORG = {"@type":"Organization","@id":SITE+"/#org","name":"i+Thinnk®","url":SITE+
 AUTH = {"@type":"Person","name":"Alberto Núñez Neumann"}
 
 # páginas de post
-for i, p in enumerate(posts):
+for i, p in enumerate(all_posts):
+    archived = p not in posts
     url = f'{SITE}/ideas/{p["slug"]}/'
     desc = p["paras"][0][:155].rsplit(" ", 1)[0] + "…"
     has_q = p["paras"][-1].rstrip().endswith("?")
@@ -91,7 +92,7 @@ for i, p in enumerate(posts):
          {"@type":"ListItem","position":2,"name":"Ideas","item":SITE+"/ideas/"},
          {"@type":"ListItem","position":3,"name":p["title"],"item":url}]}]})
     d = ROOT/"ideas"/p["slug"]; d.mkdir(parents=True, exist_ok=True)
-    (d/"index.html").write_text(page(p["title"]+" | i+Thinnk®", desc, url, body, schema), encoding="utf-8")
+    (d/"index.html").write_text(page(p["title"]+" | i+Thinnk®", desc, url, body, schema, "noindex, follow" if archived else "index, follow"), encoding="utf-8")
 
 # índice /ideas/
 grid = "".join(f'<div style="flex:1 1 340px;display:flex;flex-direction:column;background:#fff">{card(p)}</div>' for p in posts)

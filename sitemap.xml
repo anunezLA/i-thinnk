@@ -2,13 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://i-thinnk.com/</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://i-thinnk.com/ideas/</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://i-thinnk.com/ideas/2026-11-23-oee-tiempo-real/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://i-thinnk.com/ideas/2026-11-22-panel-solar-suciedad/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://i-thinnk.com/ideas/2026-11-21-pellet-finos-silo/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://i-thinnk.com/ideas/2026-11-20-aire-comprimido-fugas/</loc>
@@ -18,21 +33,6 @@
   <url>
     <loc>https://i-thinnk.com/ideas/2026-11-19-avance-fisico-curva-s/</loc>
     <lastmod>2026-11-19</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://i-thinnk.com/ideas/2026-11-18-ruido-planta-deslinde/</loc>
-    <lastmod>2026-11-18</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://i-thinnk.com/ideas/2026-11-17-mezcla-pareja-segregada-silo/</loc>
-    <lastmod>2026-11-17</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://i-thinnk.com/ideas/2026-11-16-datos-plc-scada-erp-integrados/</loc>
-    <lastmod>2026-11-16</lastmod>
     <priority>0.6</priority>
   </url>
   <url>

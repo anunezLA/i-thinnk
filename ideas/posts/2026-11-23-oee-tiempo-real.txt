@@ -1,0 +1,11 @@
+title: El OEE que se calcula a fin de turno ya no sirve
+tag: Indicadores Industriales
+date: 2026-11-23
+---
+El OEE (eficiencia global de equipo) combina disponibilidad, rendimiento y calidad en un solo número, pero si ese número se calcula a mano al final del turno, describe lo que ya pasó, no algo que todavía se pueda corregir.
+
+La diferencia real entre un OEE de cierre de turno y uno en tiempo real no es la fórmula, es la ventana de reacción. Si el rendimiento cae durante la hora, verlo en el momento permite investigar la causa mientras el contexto todavía está fresco, un operador recuerda qué pasó hace 20 minutos, no qué pasó hace tres turnos.
+
+Lo que sorprende es que la mayoría de las plantas con PLC moderno ya generan los datos de disponibilidad, velocidad y calidad necesarios para este cálculo. El obstáculo no es falta de sensores, es que nadie armó el cálculo para que corra en tiempo real en vez de una planilla de Excel que se llena al final del día.
+
+¿Tu OEE se calcula mientras la línea está corriendo, o solo al cierre del turno?

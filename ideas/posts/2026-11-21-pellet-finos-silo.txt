@@ -1,0 +1,11 @@
+title: El pellet que se rompe antes de llegar al silo
+tag: Calidad de Pellet
+date: 2026-11-21
+---
+Un pellet que se rompe después de salir de la prensa deja de ser pellet, se convierte en finos: polvo y partículas sueltas que se acumulan en el enfriador, en el transporte neumático y en la caída a los silos de almacenaje.
+
+El problema no es solo estético. Más finos significa menos producto entero disponible para el animal, más segregación granulométrica durante el transporte, y en ciertos procesos, más riesgo de generar polvo combustible en el manejo del material.
+
+La tentación es buscar el origen del problema en el enfriador o en el transporte, pero casi siempre está antes: en la temperatura y el tiempo de acondicionamiento, en el desgaste de la matriz, en la velocidad de extracción. El pellet ya nace frágil o nace resistente, el enfriador solo revela cuál de las dos cosas pasó.
+
+¿Mides el porcentaje de finos a la salida de la prensa o solo cuando el cliente se queja?

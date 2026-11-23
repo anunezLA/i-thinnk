@@ -1,0 +1,11 @@
+title: El panel sigue ahí, pero ya no genera igual
+tag: Energía Solar
+date: 2026-11-22
+---
+Un panel fotovoltaico sucio no deja de funcionar, sigue generando energía, solo que menos. El polvo, el polen y la contaminación industrial que se acumulan sobre la superficie reducen la radiación que llega a la celda, sin que ninguna alarma eléctrica lo marque como falla.
+
+Esa es justamente la trampa: como el panel no se detiene ni entrega un aviso de error, la pérdida por suciedad se esconde en el rendimiento mensual en lugar de aparecer como un incidente que alguien tenga que revisar.
+
+La frecuencia de limpieza debería definirse con datos reales de ensuciamiento de cada sitio, no con un calendario genérico. El mismo intervalo que es excesivo en una planta costera con lluvia frecuente puede ser completamente insuficiente a metros de un camino de tierra o de una fuente de polvo industrial.
+
+¿Sabes cuánta generación estás perdiendo hoy por suciedad acumulada, o solo revisas el panel cuando deja de generar?

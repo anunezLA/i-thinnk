@@ -1,0 +1,11 @@
+title: El dado desgastado que nadie cambió a tiempo
+tag: Pelletizado y Mantenimiento
+date: 2026-11-24
+---
+Una matriz de pelletizado no falla de un día para otro: se desgasta de forma progresiva, tonelada a tonelada, y el pellet sigue saliendo de la línea mientras los orificios se agrandan en silencio.
+
+El problema es que el síntoma llega tarde: el aumento de finos y la caída del índice de durabilidad del pellet (PDI) recién se notan cuando el desgaste ya está avanzado, no en las primeras etapas donde cambiar la matriz todavía sería la decisión más barata.
+
+Cambiar matrices según un calendario fijo tampoco resuelve el problema de fondo, porque el desgaste real depende del tonelaje procesado y de qué tan abrasiva es la fórmula que pasó por ahí. Dos plantas con el mismo calendario de mantenimiento pueden estar en puntos de desgaste completamente distintos.
+
+¿Cambias la matriz por tonelaje procesado y PDI, o por un calendario fijo que no distingue qué fórmula se produjo?

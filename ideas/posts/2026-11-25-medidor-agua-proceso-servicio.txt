@@ -1,0 +1,11 @@
+title: Un solo medidor de agua esconde dos consumos distintos
+tag: Gestión Hídrica
+date: 2026-11-25
+---
+El agua que entra a un proceso productivo y el agua que se usa para limpieza, riego o uso sanitario tienen dinámicas de consumo completamente distintas, y sin embargo, en muchas plantas ambas pasan por el mismo medidor general.
+
+El problema de medir todo junto es que esconde exactamente lo que se necesita ver para gestionar la huella hídrica: una mejora real de eficiencia en el proceso productivo puede quedar enmascarada por un aumento estacional de riego, y una fuga en el agua de servicio puede leerse como si fuera mayor consumo de proceso.
+
+Separar medidores por punto de uso no es un gasto adicional de instrumentación, es la condición mínima para que cualquier meta de reducción de huella hídrica se pueda verificar con datos propios, en vez de depender de una estimación.
+
+¿Tu planta mide por separado el agua de proceso y el agua de servicio, o todo pasa por un solo medidor general?

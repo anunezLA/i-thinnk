@@ -1,0 +1,11 @@
+title: El calor que se va por la chimenea sin usarse
+tag: Eficiencia Energética
+date: 2026-11-27
+---
+Muchos procesos industriales liberan calor residual en gases de escape o fluidos de proceso que simplemente se van al ambiente: energía que la planta ya generó, ya pagó, y nunca vuelve a aprovechar.
+
+Recuperar ese calor para precalentar agua, aire de combustión o alimentar un proceso secundario suele requerir una inversión menor que cualquier proyecto de generación nueva, justamente porque la fuente de calor ya existe: el desafío es solo capturarla antes de que se pierda.
+
+La razón por la que esta oportunidad casi nunca se evalúa es simple: el calor residual no aparece como una línea separada en la boleta eléctrica, así que nadie lo cuantifica como un costo específico. Sin ese número, es difícil justificar la inversión frente a otras prioridades más visibles en el presupuesto.
+
+¿Has cuantificado cuánto calor residual libera tu proceso sin aprovechar, o nunca se ha medido ese número?

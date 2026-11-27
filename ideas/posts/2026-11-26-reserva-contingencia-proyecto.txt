@@ -1,0 +1,11 @@
+title: La reserva de contingencia que se gasta en el primer mes
+tag: Gestión de Proyectos
+date: 2026-11-26
+---
+La reserva de contingencia de un proyecto industrial existe para cubrir riesgos específicos ya identificados en el análisis de riesgo, no para absorber sobrecostos que vienen de un presupuesto base mal estimado desde el principio.
+
+El problema que se repite es el gasto prematuro: cuando el presupuesto base no tiene margen realista, la contingencia empieza a usarse en las primeras semanas del proyecto para cubrir diferencias que nunca debieron depender de ella. Para el mes tres, ya no queda reserva disponible.
+
+La consecuencia aparece más adelante, cuando sí ocurre un riesgo real, uno que el análisis original identificó correctamente, y no queda margen financiero para absorberlo sin tener que negociar alcance, plazo o calidad sobre la marcha.
+
+¿Tu reserva de contingencia se usa para riesgos identificados que ocurrieron, o para cubrir un presupuesto base que ya venía ajustado?

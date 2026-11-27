@@ -2,13 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://i-thinnk.com/</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://i-thinnk.com/ideas/</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://i-thinnk.com/ideas/2026-11-27-calor-residual-chimenea/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://i-thinnk.com/ideas/2026-11-26-reserva-contingencia-proyecto/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://i-thinnk.com/ideas/2026-11-25-medidor-agua-proceso-servicio/</loc>
@@ -23,16 +33,6 @@
   <url>
     <loc>https://i-thinnk.com/ideas/2026-11-23-oee-tiempo-real/</loc>
     <lastmod>2026-11-23</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://i-thinnk.com/ideas/2026-11-22-panel-solar-suciedad/</loc>
-    <lastmod>2026-11-22</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://i-thinnk.com/ideas/2026-11-21-pellet-finos-silo/</loc>
-    <lastmod>2026-11-21</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
